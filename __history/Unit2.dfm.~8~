@@ -1,0 +1,97 @@
+object DataModule2: TDataModule2
+  Height = 629
+  Width = 1121
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'DataSource=BDTAXI'
+      'DriverID=ODBC')
+    Connected = True
+    LoginPrompt = False
+    Left = 56
+    Top = 32
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from OPERATOR')
+    Left = 136
+    Top = 32
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 208
+    Top = 32
+  end
+  object FDQuery2: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from STRADA')
+    Left = 136
+    Top = 96
+  end
+  object DataSource2: TDataSource
+    DataSet = FDQuery2
+    Left = 208
+    Top = 96
+  end
+  object FDQuery3: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from LOCALITATE')
+    Left = 136
+    Top = 160
+  end
+  object DataSource3: TDataSource
+    DataSet = FDQuery3
+    Left = 208
+    Top = 160
+  end
+  object DataSource4: TDataSource
+    DataSet = FDQuery4
+    Left = 208
+    Top = 224
+  end
+  object FDQuery4: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from TIP')
+    Left = 136
+    Top = 224
+  end
+  object FDQuery5: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from CAROSERIE')
+    Left = 136
+    Top = 288
+  end
+  object DataSource5: TDataSource
+    DataSet = FDQuery5
+    Left = 208
+    Top = 288
+  end
+  object DataSource6: TDataSource
+    DataSet = FDQuery6
+    Left = 208
+    Top = 352
+  end
+  object FDQuery6: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from CULOARE')
+    Left = 136
+    Top = 352
+  end
+  object FDQuery7: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from MARCA')
+    Left = 136
+    Top = 416
+  end
+  object DataSource7: TDataSource
+    DataSet = FDQuery7
+    Left = 208
+    Top = 416
+  end
+end

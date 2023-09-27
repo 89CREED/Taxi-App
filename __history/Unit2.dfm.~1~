@@ -1,0 +1,13 @@
+object DataModule2: TDataModule2
+  Height = 629
+  Width = 1121
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'DataSource=BDTAXI'
+      'DriverID=ODBC')
+    Connected = True
+    LoginPrompt = False
+    Left = 56
+    Top = 32
+  end
+end
