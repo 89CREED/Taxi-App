@@ -9,6 +9,7 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
+int marca_id, model_id, tip_id, culoare_id, caroserie_id;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
@@ -60,7 +61,7 @@ void __fastcall TForm1::SpeedButton1Click(TObject *Sender)
 		DataModule2->FDQuery10->Open();
 
 		TabSheet1->TabVisible=false;//autentificare
-		TabSheet2->TabVisible=true;
+		TabSheet3->TabVisible=true;
 	}
 	else
 	{
@@ -148,3 +149,146 @@ void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
 	DataModule2->FDQuery1->Open();
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton26Click(TObject *Sender)
+{
+  //marca
+	DataModule2->FDQuery7->Close();
+	DataModule2->FDQuery7->Open();
+
+	TabSheet5->TabVisible=true;
+	TabSheet3->TabVisible=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton15Click(TObject *Sender)
+{
+	Edit3->Text = DataModule2->FDQuery7->FieldByName("DENUMIRE")->AsString;
+	Edit9->Text = DataModule2->FDQuery7->FieldByName("DENUMIRE")->AsString;
+	marca_id    = DataModule2->FDQuery7->FieldByName("MARCA_ID")->AsInteger;
+
+	TabSheet5->TabVisible = false;
+	TabSheet3->TabVisible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton27Click(TObject *Sender)
+{
+	//model
+	DataModule2->FDQuery8->Close();
+	DataModule2->FDQuery8->ParamByName("MARCA_ID")->AsInteger = marca_id;
+	DataModule2->FDQuery8->Open();
+
+	TabSheet4->TabVisible=true;
+	TabSheet3->TabVisible=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton17Click(TObject *Sender)
+{
+	Edit4->Text  = DataModule2->FDQuery8->FieldByName("DENUMIRE")->AsString;
+	Edit10->Text = DataModule2->FDQuery8->FieldByName("DENUMIRE")->AsString;
+	model_id     = DataModule2->FDQuery8->FieldByName("MODEL_ID")->AsInteger;
+
+	TabSheet4->TabVisible = false;
+	TabSheet3->TabVisible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton18Click(TObject *Sender)
+{
+  TabSheet4->TabVisible = false;
+	TabSheet3->TabVisible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton28Click(TObject *Sender)
+{
+	//caroserie
+	DataModule2->FDQuery5->Close();
+	DataModule2->FDQuery5->Open();
+
+	TabSheet7->TabVisible=true;
+	TabSheet3->TabVisible=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton11Click(TObject *Sender)
+{
+	Edit5->Text  = DataModule2->FDQuery5->FieldByName("TIP_CAROSERIE")->AsString;
+	Edit11->Text = DataModule2->FDQuery5->FieldByName("TIP_CAROSERIE")->AsString;
+	caroserie_id = DataModule2->FDQuery5->FieldByName("CAROSERIE_ID")->AsInteger;
+
+	TabSheet7->TabVisible = false;
+	TabSheet3->TabVisible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton12Click(TObject *Sender)
+{
+  TabSheet7->TabVisible = false;
+	TabSheet3->TabVisible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton29Click(TObject *Sender)
+{
+	//culoare
+	DataModule2->FDQuery6->Close();
+	DataModule2->FDQuery6->Open();
+
+	TabSheet6->TabVisible=true;
+	TabSheet3->TabVisible=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton13Click(TObject *Sender)
+{
+	Edit6->Text  = DataModule2->FDQuery6->FieldByName("NUME_CULOARE")->AsString;
+	Edit12->Text = DataModule2->FDQuery6->FieldByName("NUME_CULOARE")->AsString;
+	culoare_id   = DataModule2->FDQuery6->FieldByName("CULOARE_ID")->AsInteger;
+
+	TabSheet6->TabVisible = false;
+	TabSheet3->TabVisible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton14Click(TObject *Sender)
+{
+  TabSheet6->TabVisible = false;
+	TabSheet3->TabVisible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton32Click(TObject *Sender)
+{
+	if( (Edit3->Text != "") && (Edit4->Text != "") && (Edit5->Text != "") && (Edit6->Text != "") && (Edit7->Text != "") && (Edit8->Text != "") )
+	{
+		DataModule2->Inserare_Auto->Close();
+		DataModule2->Inserare_Auto->ParamByName("MODEL_ID")->AsInteger     = model_id;
+		DataModule2->Inserare_Auto->ParamByName("CULOARE_ID")->AsInteger   = culoare_id;
+		DataModule2->Inserare_Auto->ParamByName("CAROSERIE_ID")->AsInteger = caroserie_id;
+		DataModule2->Inserare_Auto->ParamByName("TIP_ID")->AsInteger       = 1;//tip_id;
+		DataModule2->Inserare_Auto->ParamByName("NR_AUTO")->AsString       = Edit8->Text;
+		DataModule2->Inserare_Auto->ParamByName("MOTOR")->AsString         = Edit7->Text;
+		DataModule2->Inserare_Auto->ParamByName("COMBUSTIBIL")->AsString   = ComboBox1->Text;
+		DataModule2->Inserare_Auto->ExecSQL();
+
+		DataModule2->FDQuery9->Close();
+		DataModule2->FDQuery9->Open();
+
+		Edit3->Text 	  = "";
+		Edit4->Text 	  = "";
+		Edit5->Text 	  = "";
+		Edit6->Text 	  = "";
+		Edit7->Text 	  = "";
+		Edit8->Text     = "";
+		ComboBox1->Text = "";
+	}
+	else
+	{
+		ShowMessage("Nu sunt introduse toate cimpurile");
+  }
+}
+//---------------------------------------------------------------------------
+

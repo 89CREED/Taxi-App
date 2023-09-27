@@ -102,14 +102,27 @@ object DataModule2: TDataModule2
   object FDQuery8: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'Select * from MODEL')
+      'Select * from MODEL where MARCA_ID=:MARCA_ID')
     Left = 88
     Top = 400
+    ParamData = <
+      item
+        Name = 'MARCA_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
   end
   object FDQuery9: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'Select * from AUTOMOBIL')
+      
+        'SELECT * FROM AUTOMOBIL A INNER JOIN CAROSERIE C ON A.CAROSERIE_' +
+        'ID=C.CAROSERIE_ID'
+      #9#9#9#9#9#9'  INNER JOIN MODEL M ON M.MODEL_ID=A.MODEL_ID'
+      #9#9#9#9#9#9'  INNER JOIN MARCA MM ON MM.MARCA_ID=M.MARCA_ID'
+      #9#9#9#9#9#9'  INNER JOIN TIP T ON T.TIP_ID=A.TIP_ID'
+      #9#9#9#9#9#9'  INNER JOIN CULOARE CC ON CC.CULOARE_ID=A.CULOARE_ID')
     Left = 88
     Top = 456
   end
@@ -129,5 +142,60 @@ object DataModule2: TDataModule2
       'Select * from COMANDA')
     Left = 88
     Top = 512
+  end
+  object Inserare_Auto: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        'INSERT INTO AUTOMOBIL(MODEL_ID,CULOARE_ID,CAROSERIE_ID,TIP_ID,NR' +
+        '_AUTO,MOTOR,COMBUSTIBIL)'
+      
+        'VALUES(:MODEL_ID,:CULOARE_ID,:CAROSERIE_ID,:TIP_ID,:NR_AUTO,:MOT' +
+        'OR,:COMBUSTIBIL)')
+    Left = 88
+    Top = 576
+    ParamData = <
+      item
+        Name = 'MODEL_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'CULOARE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'CAROSERIE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'TIP_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NR_AUTO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'MOTOR'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'COMBUSTIBIL'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
   end
 end

@@ -4,6 +4,8 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
+#include <Vcl.Styles.hpp>
+#include <Vcl.Themes.hpp>
 USEFORM("Unit1.cpp", Form1);
 USEFORM("Unit2.cpp", DataModule2); /* TDataModule: File Type */
 //---------------------------------------------------------------------------
@@ -13,6 +15,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
+		TStyleManager::TrySetStyle("Aqua Light Slate");
 		Application->CreateForm(__classid(TForm1), &Form1);
 		Application->CreateForm(__classid(TDataModule2), &DataModule2);
 		Application->Run();
