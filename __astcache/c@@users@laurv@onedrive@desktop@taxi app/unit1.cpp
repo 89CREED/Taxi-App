@@ -95,45 +95,16 @@ void __fastcall TForm1::Panel6Resize(TObject *Sender)
 					DBGrid1->Columns->Items[2]->Width;
 	DBGrid1->Columns->Items[3]->Width = w - a - 40;
 
-	//strada
+
 	int b = DBGrid2->Columns->Items[0]->Width +
 					DBGrid2->Columns->Items[1]->Width;
-	DBGrid2->Columns->Items[2]->Width = w - b - 40;
-
-	//localitatea
-	int c = DBGrid3->Columns->Items[0]->Width +
-					DBGrid3->Columns->Items[1]->Width;
-	DBGrid3->Columns->Items[2]->Width = w - c - 40;
-
-	//tip taxi
-	int d = DBGrid4->Columns->Items[0]->Width +
-					DBGrid4->Columns->Items[1]->Width;
-	DBGrid4->Columns->Items[2]->Width = w - d - 40;
-
-	//caroserie
-	int e = DBGrid5->Columns->Items[0]->Width +
-					DBGrid5->Columns->Items[1]->Width;
-	DBGrid5->Columns->Items[2]->Width = w - e - 40;
-
-	//culoare
-	int f = DBGrid6->Columns->Items[0]->Width +
-					DBGrid6->Columns->Items[1]->Width;
-	DBGrid6->Columns->Items[2]->Width = w - f - 40;
-
-	//marca
-	int g = DBGrid7->Columns->Items[0]->Width +
-					DBGrid7->Columns->Items[1]->Width;
-	DBGrid7->Columns->Items[2]->Width = w - g - 40;
-
-	//model
-	int h = DBGrid8->Columns->Items[0]->Width +
-					DBGrid8->Columns->Items[1]->Width;
-	DBGrid8->Columns->Items[2]->Width = w - h - 40;
-
-	//automobil
-	int i = DBGrid9->Columns->Items[0]->Width +
-					DBGrid9->Columns->Items[1]->Width;
-	DBGrid9->Columns->Items[2]->Width = w - i - 40;
+	DBGrid2->Columns->Items[2]->Width = w - b - 40;//strada
+	DBGrid3->Columns->Items[2]->Width = w - b - 40;//localitatea
+	DBGrid4->Columns->Items[2]->Width = w - b - 40;//tip taxi
+	DBGrid5->Columns->Items[2]->Width = w - b - 40;//caroserie
+	DBGrid6->Columns->Items[2]->Width = w - b - 40;//culoare
+	DBGrid7->Columns->Items[2]->Width = w - b - 40;//marca
+	DBGrid8->Columns->Items[2]->Width = w - b - 40;//model
 
 	//comanda
 	int j = DBGrid10->Columns->Items[0]->Width +

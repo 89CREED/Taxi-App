@@ -20,7 +20,7 @@ object Form1: TForm1
     Height = 81
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1240
+    ExplicitWidth = 1242
   end
   object Panel2: TPanel
     Left = 0
@@ -29,6 +29,8 @@ object Form1: TForm1
     Height = 507
     Align = alClient
     TabOrder = 1
+    ExplicitWidth = 1242
+    ExplicitHeight = 503
     object PageControl1: TPageControl
       Left = 1
       Top = 1
@@ -37,6 +39,8 @@ object Form1: TForm1
       ActivePage = TabSheet3
       Align = alClient
       TabOrder = 0
+      ExplicitWidth = 1240
+      ExplicitHeight = 501
       object TabSheet1: TTabSheet
         Caption = 'Autentificare'
         object Panel4: TPanel
@@ -1331,6 +1335,7 @@ object Form1: TForm1
           Height = 475
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 471
           object PageControl2: TPageControl
             Left = 1
             Top = 1
@@ -1339,6 +1344,7 @@ object Form1: TForm1
             ActivePage = TabSheet14
             Align = alClient
             TabOrder = 0
+            ExplicitHeight = 469
             object TabSheet13: TTabSheet
               Caption = 'Main'
               object SpeedButton19: TSpeedButton
@@ -1821,8 +1827,8 @@ object Form1: TForm1
           Height = 475
           Align = alClient
           TabOrder = 1
-          ExplicitWidth = 880
-          ExplicitHeight = 474
+          ExplicitWidth = 882
+          ExplicitHeight = 471
           object DBGrid9: TDBGrid
             Left = 1
             Top = 1
@@ -1870,7 +1876,7 @@ object Form1: TForm1
                 Title.Font.Height = -13
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 114
+                Width = 111
                 Visible = True
               end
               item
@@ -1888,7 +1894,7 @@ object Form1: TForm1
                 Title.Font.Height = -13
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 138
+                Width = 121
                 Visible = True
               end
               item
@@ -2761,7 +2767,7 @@ object Form1: TForm1
     Height = 96
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 587
-    ExplicitWidth = 1240
+    ExplicitTop = 584
+    ExplicitWidth = 1242
   end
 end
