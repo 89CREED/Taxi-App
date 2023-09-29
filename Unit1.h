@@ -64,7 +64,6 @@ __published:	// IDE-managed Components
 	TPanel *Panel20;
 	TPanel *Panel21;
 	TPanel *Panel22;
-	TPanel *Panel23;
 	TPanel *Panel24;
 	TSpeedButton *SpeedButton7;
 	TSpeedButton *SpeedButton8;
@@ -78,8 +77,6 @@ __published:	// IDE-managed Components
 	TSpeedButton *SpeedButton16;
 	TSpeedButton *SpeedButton17;
 	TSpeedButton *SpeedButton18;
-	TSpeedButton *SpeedButton21;
-	TSpeedButton *SpeedButton22;
 	TDBGrid *DBGrid2;
 	TDBGrid *DBGrid3;
 	TDBGrid *DBGrid4;
@@ -87,7 +84,6 @@ __published:	// IDE-managed Components
 	TDBGrid *DBGrid6;
 	TDBGrid *DBGrid7;
 	TDBGrid *DBGrid8;
-	TDBGrid *DBGrid10;
 	TPageControl *PageControl2;
 	TTabSheet *TabSheet13;
 	TTabSheet *TabSheet14;
@@ -105,7 +101,6 @@ __published:	// IDE-managed Components
 	TEdit *Edit5;
 	TSpeedButton *SpeedButton29;
 	TEdit *Edit6;
-	TSpeedButton *SpeedButton30;
 	TEdit *Edit7;
 	TEdit *Edit8;
 	TComboBox *ComboBox1;
@@ -120,12 +115,36 @@ __published:	// IDE-managed Components
 	TEdit *Edit12;
 	TSpeedButton *SpeedButton36;
 	TEdit *Edit13;
-	TSpeedButton *SpeedButton37;
 	TComboBox *ComboBox2;
 	TEdit *Edit14;
 	TSpeedButton *SpeedButton38;
 	TSpeedButton *SpeedButton39;
 	TDBGrid *DBGrid9;
+	TPanel *Panel23;
+	TPageControl *PageControl3;
+	TTabSheet *TabSheet16;
+	TSpeedButton *SpeedButton21;
+	TSpeedButton *SpeedButton22;
+	TSpeedButton *SpeedButton30;
+	TSpeedButton *SpeedButton40;
+	TTabSheet *TabSheet17;
+	TSpeedButton *SpeedButton41;
+	TSpeedButton *SpeedButton45;
+	TSpeedButton *SpeedButton46;
+	TEdit *Edit15;
+	TEdit *Edit16;
+	TEdit *Edit17;
+	TEdit *Edit18;
+	TEdit *Edit19;
+	TTabSheet *TabSheet18;
+	TPanel *Panel25;
+	TDBGrid *DBGrid10;
+	TSpeedButton *SpeedButton42;
+	TSpeedButton *SpeedButton37;
+	TEdit *Edit20;
+	TEdit *Edit21;
+	TEdit *Edit22;
+	TEdit *Edit23;
 	void __fastcall SpeedButton1Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall Panel6Resize(TObject *Sender);
@@ -142,6 +161,14 @@ __published:	// IDE-managed Components
 	void __fastcall SpeedButton13Click(TObject *Sender);
 	void __fastcall SpeedButton14Click(TObject *Sender);
 	void __fastcall SpeedButton32Click(TObject *Sender);
+	void __fastcall SpeedButton20Click(TObject *Sender);
+	void __fastcall Edit9KeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall SpeedButton38Click(TObject *Sender);
+	void __fastcall SpeedButton39Click(TObject *Sender);
+	void __fastcall SpeedButton33Click(TObject *Sender);
+	void __fastcall SpeedButton19Click(TObject *Sender);
+	void __fastcall SpeedButton23Click(TObject *Sender);
+	void __fastcall TabSheet3Show(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

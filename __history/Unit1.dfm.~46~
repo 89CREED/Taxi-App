@@ -1341,7 +1341,7 @@ object Form1: TForm1
             Top = 1
             Width = 348
             Height = 473
-            ActivePage = TabSheet14
+            ActivePage = TabSheet15
             Align = alClient
             TabOrder = 0
             ExplicitHeight = 469
@@ -1372,6 +1372,7 @@ object Form1: TForm1
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
                 ParentFont = False
+                OnClick = SpeedButton20Click
               end
               object SpeedButton23: TSpeedButton
                 Left = 64
@@ -1420,7 +1421,7 @@ object Form1: TForm1
                 Left = 286
                 Top = 16
                 Width = 41
-                Height = 25
+                Height = 30
                 Caption = '...'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -1434,7 +1435,7 @@ object Form1: TForm1
                 Left = 286
                 Top = 64
                 Width = 41
-                Height = 25
+                Height = 30
                 Caption = '...'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -1448,7 +1449,7 @@ object Form1: TForm1
                 Left = 286
                 Top = 112
                 Width = 41
-                Height = 25
+                Height = 30
                 Caption = '...'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -1462,7 +1463,7 @@ object Form1: TForm1
                 Left = 286
                 Top = 160
                 Width = 41
-                Height = 25
+                Height = 30
                 Caption = '...'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -1476,7 +1477,7 @@ object Form1: TForm1
                 Left = 286
                 Top = 208
                 Width = 41
-                Height = 25
+                Height = 30
                 Caption = '...'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -1513,10 +1514,10 @@ object Form1: TForm1
                 ParentFont = False
               end
               object Edit3: TEdit
-                Left = 16
+                Left = 15
                 Top = 16
-                Width = 249
-                Height = 29
+                Width = 250
+                Height = 30
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -16
@@ -1527,10 +1528,10 @@ object Form1: TForm1
                 TextHint = 'Marca'
               end
               object Edit4: TEdit
-                Left = 16
+                Left = 15
                 Top = 64
-                Width = 249
-                Height = 29
+                Width = 250
+                Height = 30
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -16
@@ -1541,10 +1542,10 @@ object Form1: TForm1
                 TextHint = 'Model'
               end
               object Edit5: TEdit
-                Left = 16
+                Left = 15
                 Top = 112
-                Width = 249
-                Height = 29
+                Width = 250
+                Height = 30
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -16
@@ -1555,10 +1556,10 @@ object Form1: TForm1
                 TextHint = 'Caroserie'
               end
               object Edit6: TEdit
-                Left = 16
+                Left = 15
                 Top = 160
-                Width = 249
-                Height = 29
+                Width = 250
+                Height = 30
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -16
@@ -1569,10 +1570,10 @@ object Form1: TForm1
                 TextHint = 'Culoare'
               end
               object Edit7: TEdit
-                Left = 16
+                Left = 15
                 Top = 208
-                Width = 249
-                Height = 29
+                Width = 250
+                Height = 30
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -16
@@ -1583,10 +1584,10 @@ object Form1: TForm1
                 TextHint = 'Capacitate Motor'
               end
               object Edit8: TEdit
-                Left = 16
+                Left = 15
                 Top = 304
-                Width = 249
-                Height = 29
+                Width = 250
+                Height = 30
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -16
@@ -1597,9 +1598,9 @@ object Form1: TForm1
                 TextHint = 'Nr Inmatriculare'
               end
               object ComboBox1: TComboBox
-                Left = 16
+                Left = 15
                 Top = 256
-                Width = 249
+                Width = 250
                 Height = 29
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -1633,6 +1634,7 @@ object Form1: TForm1
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
                 ParentFont = False
+                OnClick = SpeedButton26Click
               end
               object SpeedButton34: TSpeedButton
                 Left = 294
@@ -1646,6 +1648,7 @@ object Form1: TForm1
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
                 ParentFont = False
+                OnClick = SpeedButton27Click
               end
               object SpeedButton35: TSpeedButton
                 Left = 294
@@ -1659,9 +1662,10 @@ object Form1: TForm1
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
                 ParentFont = False
+                OnClick = SpeedButton28Click
               end
               object SpeedButton36: TSpeedButton
-                Left = 294
+                Left = 296
                 Top = 168
                 Width = 41
                 Height = 25
@@ -1672,6 +1676,7 @@ object Form1: TForm1
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
                 ParentFont = False
+                OnClick = SpeedButton29Click
               end
               object SpeedButton37: TSpeedButton
                 Left = 294
@@ -1713,7 +1718,7 @@ object Form1: TForm1
                 ParentFont = False
               end
               object Edit9: TEdit
-                Left = 24
+                Left = 15
                 Top = 24
                 Width = 249
                 Height = 29
@@ -1727,7 +1732,7 @@ object Form1: TForm1
                 TextHint = 'Marca'
               end
               object Edit10: TEdit
-                Left = 24
+                Left = 15
                 Top = 72
                 Width = 249
                 Height = 29
@@ -1741,7 +1746,7 @@ object Form1: TForm1
                 TextHint = 'Model'
               end
               object Edit11: TEdit
-                Left = 24
+                Left = 15
                 Top = 120
                 Width = 249
                 Height = 29
@@ -1755,7 +1760,7 @@ object Form1: TForm1
                 TextHint = 'Caroserie'
               end
               object Edit12: TEdit
-                Left = 24
+                Left = 15
                 Top = 168
                 Width = 249
                 Height = 29
@@ -1769,7 +1774,7 @@ object Form1: TForm1
                 TextHint = 'Culoare'
               end
               object Edit13: TEdit
-                Left = 24
+                Left = 15
                 Top = 216
                 Width = 249
                 Height = 29
@@ -1783,7 +1788,7 @@ object Form1: TForm1
                 TextHint = 'Capacitate Motor'
               end
               object ComboBox2: TComboBox
-                Left = 24
+                Left = 15
                 Top = 264
                 Width = 249
                 Height = 29
@@ -1804,7 +1809,7 @@ object Form1: TForm1
                   'Electric')
               end
               object Edit14: TEdit
-                Left = 24
+                Left = 15
                 Top = 312
                 Width = 249
                 Height = 29
@@ -1876,7 +1881,7 @@ object Form1: TForm1
                 Title.Font.Height = -13
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 114
+                Width = 111
                 Visible = True
               end
               item
@@ -1894,7 +1899,7 @@ object Form1: TForm1
                 Title.Font.Height = -13
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 110
+                Width = 121
                 Visible = True
               end
               item
@@ -1948,7 +1953,7 @@ object Form1: TForm1
                 Title.Font.Height = -13
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 94
+                Width = 103
                 Visible = True
               end
               item
@@ -1966,7 +1971,7 @@ object Form1: TForm1
                 Title.Font.Height = -13
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 133
+                Width = 139
                 Visible = True
               end
               item
