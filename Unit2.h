@@ -51,6 +51,7 @@ __published:	// IDE-managed Components
 	TFDQuery *Inserare_Auto;
 	TFDQuery *Update_Auto;
 	TFDQuery *Delete_Auto;
+	TFDQuery *Insert_Comanda;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule2(TComponent* Owner);
