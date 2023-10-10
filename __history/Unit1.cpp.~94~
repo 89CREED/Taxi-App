@@ -214,39 +214,20 @@ void __fastcall TForm1::SpeedButton14Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton32Click(TObject *Sender)
 {
-	if( (Edit3->Text != "") && (Edit4->Text != "") && (Edit5->Text != "") && (Edit6->Text != "") && (Edit7->Text != "") && (Edit8->Text != "") && (Edit9->Text != "") )
-	{
+
 		DataModule2->Insert_Comanda->Close();
-		DataModule2->Insert_Comanda->ParamByName("Automobil_ID")->AsInteger = automobil_id;
+		DataModule2->Insert_Comanda->ParamByName("AUTO_ID")->AsInteger = automobil_id;
 		DataModule2->Insert_Comanda->ParamByName("LOCALITATE_ID")->AsInteger = strada_id;
 		DataModule2->Insert_Comanda->ParamByName("OPERATOR_ID")->AsInteger = operator_id;
 		DataModule2->Insert_Comanda->ParamByName("NOTA")->AsString = Edit25->Text;
 		DataModule2->Insert_Comanda->ParamByName("ADRESA_DESTINATIE")->AsString = Edit19->Text+", "+Edit20->Text+", "+Edit21->Text;
-		DataModule2->Insert_Comanda->ParamByName("PRET")->AsString = Edit24->Text;
-		DataModule2->Insert_Comanda->ParamByName("KM")->AsString = Edit22->Text;
-		DataModule2->Insert_Comanda->ParamByName("COST_KM")->AsString = Edit23->Text;
+		DataModule2->Insert_Comanda->ParamByName("PRET")->AsFloat = StrToFloat(Edit24->Text);
+		DataModule2->Insert_Comanda->ParamByName("KM")->AsFloat = StrToFloat(Edit22->Text);
+		DataModule2->Insert_Comanda->ParamByName("COST_KM")->AsFloat = StrToFloat(Edit23->Text);
 		DataModule2->Insert_Comanda->ExecSQL();
 
-		DataModule2->FDQuery9->Close();
-		DataModule2->FDQuery9->Open();
 
-		Edit3->Text 	  = "";
-		Edit4->Text 	  = "";
-		Edit5->Text 	  = "";
-		Edit6->Text 	  = "";
-		Edit7->Text 	  = "";
-		Edit8->Text     = "";
-		Edit9->Text     = "";
-		ComboBox1->Text = "";
 
-		TabSheet14->TabVisible = false; //inserare
-		TabSheet13->TabVisible = true ; //main
-		MessageDlg("Inserare cu succes!", mtInformation, TMsgDlgButtons() << mbOK, 0);
-	}
-	else
-	{
-		ShowMessage("Nu sunt introduse toate cimpurile");
-  }
 }
 //---------------------------------------------------------------------------
 
@@ -469,8 +450,8 @@ void __fastcall TForm1::SpeedButton24Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton25Click(TObject *Sender)
 {
-    TabSheet2->TabVisible = false;
-	TabSheet3->TabVisible = true;
+	TabSheet2->TabVisible = true;
+	TabSheet3->TabVisible = false;
 }
 //---------------------------------------------------------------------------
 
@@ -501,14 +482,16 @@ void __fastcall TForm1::Edit17Change(TObject *Sender)
 	if(Edit17->Text.Length()>2)
 	{
 		DataModule2->FDQuery2->Close();
+
 		DataModule2->FDQuery2->SQL->Clear();
+
 		DataModule2->FDQuery2->SQL->Add(" SELECT * FROM RAION R INNER JOIN LOCALITATE L ON R.RAION_ID=L.RAION_ID ");
 		DataModule2->FDQuery2->SQL->Add(" INNER JOIN STRADA S ON S.LOCALITATE_ID=L.LOCALITATE_ID ");
 
-		if (RadioButton1->Checked) DataModule2->FDQuery2->SQL->Add(" where raion like '%"+Edit17->Text+"%' ");
-		if (RadioButton2->Checked) DataModule2->FDQuery2->SQL->Add(" where L.denumire like '%"+Edit17->Text+"%' ");
-		if (RadioButton3->Checked) DataModule2->FDQuery2->SQL->Add(" where S.denumire like '%"+Edit17->Text+"%' ");
-        DataModule2->FDQuery2->Open();
+		if (RadioButton1->Checked) DataModule2->FDQuery2->SQL->Add(" where raion like '%" + Edit17->Text + "%' ");
+		if (RadioButton2->Checked) DataModule2->FDQuery2->SQL->Add(" where L.DENUMIRE like '%" + Edit17->Text + "%' ");
+		if (RadioButton3->Checked) DataModule2->FDQuery2->SQL->Add(" where S.DENUMIRE like '%" + Edit17->Text + "%' ");
+				DataModule2->FDQuery2->Open();
 	}
 	else
 	{
@@ -523,15 +506,15 @@ void __fastcall TForm1::SpeedButton5Click(TObject *Sender)
 	{
 		if((DataModule2->FDQuery1->Active==true) && (!DataModule2->FDQuery1->IsEmpty()))
 		{
-			Edit19->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit20->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit21->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
+			Edit19->Text = DataModule2->FDQuery2->FieldByName("raion")     ->AsString;
+			Edit20->Text = DataModule2->FDQuery2->FieldByName("denumire")  ->AsString;
+			Edit21->Text = DataModule2->FDQuery2->FieldByName("denumire_1")->AsString;
 
-			Edit28->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit29->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit30->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
+			Edit28->Text = DataModule2->FDQuery2->FieldByName("raion")     ->AsString;
+			Edit29->Text = DataModule2->FDQuery2->FieldByName("denumire")  ->AsString;
+			Edit30->Text = DataModule2->FDQuery2->FieldByName("denumire_1")->AsString;
 
-			strada_id=DataModule2->FDQuery1->FieldByName("strada_id")->AsInteger;
+			strada_id=DataModule2->FDQuery2->FieldByName("strada_id")->AsInteger;
 
 			TabSheet10->TabVisible = false;
 			TabSheet2->TabVisible = true;
@@ -550,20 +533,11 @@ void __fastcall TForm1::SpeedButton5Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton6Click(TObject *Sender)
 {
-    TabSheet10->TabVisible = false;
+	TabSheet10->TabVisible = false;
 	TabSheet2->TabVisible = true;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::SpeedButton52Click(TObject *Sender)
-{
-	DataModule2->FDQuery1->Close();
-	RadioButton3->Checked=true;
-	TabSheet10->TabVisible = true;
-	TabSheet2->TabVisible = false;
-
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TForm1::RadioButton1Click(TObject *Sender)
 {
@@ -571,7 +545,7 @@ void __fastcall TForm1::RadioButton1Click(TObject *Sender)
 	{
 		Edit17->Clear();
 		Edit17->SetFocus();
-    }
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -594,4 +568,16 @@ void __fastcall TForm1::RadioButton3Click(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::SpeedButton42Click(TObject *Sender)
+{
+	DataModule2->FDQuery1->Close();
+	RadioButton3->Checked=true;
+  Edit17->Clear();
+	TabSheet10->TabVisible = true;
+	TabSheet2->TabVisible = false;
+}
+//---------------------------------------------------------------------------
+
 

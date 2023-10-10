@@ -148,9 +148,6 @@ __published:	// IDE-managed Components
 	TSpeedButton *SpeedButton43;
 	TEdit *Edit14;
 	TSpeedButton *SpeedButton44;
-	TSpeedButton *SpeedButton47;
-	TSpeedButton *SpeedButton48;
-	TSpeedButton *SpeedButton49;
 	TSpeedButton *SpeedButton50;
 	TEdit *Edit27;
 	TSpeedButton *SpeedButton51;
@@ -207,10 +204,10 @@ __published:	// IDE-managed Components
 	void __fastcall Edit17Change(TObject *Sender);
 	void __fastcall SpeedButton5Click(TObject *Sender);
 	void __fastcall SpeedButton6Click(TObject *Sender);
-	void __fastcall SpeedButton52Click(TObject *Sender);
 	void __fastcall RadioButton1Click(TObject *Sender);
 	void __fastcall RadioButton2Click(TObject *Sender);
 	void __fastcall RadioButton3Click(TObject *Sender);
+	void __fastcall SpeedButton42Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

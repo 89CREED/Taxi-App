@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 684
-  ClientWidth = 1244
+  ClientHeight = 721
+  ClientWidth = 1248
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1244
+    Width = 1248
     Height = 81
     Align = alTop
     TabOrder = 0
@@ -25,18 +25,18 @@ object Form1: TForm1
   object Panel2: TPanel
     Left = 0
     Top = 81
-    Width = 1244
-    Height = 507
+    Width = 1248
+    Height = 544
     Align = alClient
     TabOrder = 1
     ExplicitWidth = 1242
-    ExplicitHeight = 503
+    ExplicitHeight = 540
     object PageControl1: TPageControl
       Left = 1
       Top = 1
-      Width = 1242
-      Height = 505
-      ActivePage = TabSheet9
+      Width = 1246
+      Height = 542
+      ActivePage = TabSheet10
       Align = alClient
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -45,6 +45,8 @@ object Form1: TForm1
       Font.Style = []
       ParentFont = False
       TabOrder = 0
+      ExplicitWidth = 1240
+      ExplicitHeight = 538
       object TabSheet1: TTabSheet
         Caption = 'Autentificare'
         object Panel4: TPanel
@@ -1217,26 +1219,27 @@ object Form1: TForm1
         object Panel24: TPanel
           Left = 0
           Top = 0
-          Width = 1234
-          Height = 473
+          Width = 1238
+          Height = 510
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 475
+          ExplicitWidth = 1232
+          ExplicitHeight = 506
           object Panel23: TPanel
             Left = 1
             Top = 1
             Width = 350
-            Height = 471
+            Height = 508
             Align = alLeft
             TabOrder = 0
-            ExplicitHeight = 473
+            ExplicitHeight = 504
             object PageControl3: TPageControl
               Left = 1
               Top = 1
               Width = 348
-              Height = 469
+              Height = 506
               Cursor = crHandPoint
-              ActivePage = TabSheet16
+              ActivePage = TabSheet17
               Align = alClient
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
@@ -1245,6 +1248,7 @@ object Form1: TForm1
               Font.Style = []
               ParentFont = False
               TabOrder = 0
+              ExplicitHeight = 502
               object TabSheet16: TTabSheet
                 Caption = 'Main'
                 Font.Charset = DEFAULT_CHARSET
@@ -1313,7 +1317,7 @@ object Form1: TForm1
                   Left = 285
                   Top = 15
                   Width = 41
-                  Height = 33
+                  Height = 70
                   Cursor = crHandPoint
                   Caption = '...'
                   Font.Charset = DEFAULT_CHARSET
@@ -1322,10 +1326,11 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton41Click
                 end
                 object SpeedButton45: TSpeedButton
-                  Left = 16
-                  Top = 377
+                  Left = 15
+                  Top = 406
                   Width = 110
                   Height = 50
                   Caption = 'Executa'
@@ -1338,8 +1343,239 @@ object Form1: TForm1
                   OnClick = SpeedButton32Click
                 end
                 object SpeedButton46: TSpeedButton
+                  Left = 154
+                  Top = 406
+                  Width = 110
+                  Height = 50
+                  Caption = 'Anuleaza'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -20
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                end
+                object SpeedButton42: TSpeedButton
+                  Left = 284
+                  Top = 138
+                  Width = 41
+                  Height = 119
+                  Cursor = crHandPoint
+                  Caption = '...'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -16
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  OnClick = SpeedButton42Click
+                end
+                object SpeedButton37: TSpeedButton
+                  Left = 284
+                  Top = 95
+                  Width = 41
+                  Height = 33
+                  Cursor = crHandPoint
+                  Caption = '...'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -16
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  OnClick = SpeedButton37Click
+                end
+                object Edit18: TEdit
+                  Left = 15
+                  Top = 95
+                  Width = 250
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 0
+                  TextHint = 'Conducator'
+                  OnKeyPress = Edit10KeyPress
+                end
+                object Edit19: TEdit
+                  Left = 15
+                  Top = 138
+                  Width = 250
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 1
+                  TextHint = 'Raion destinatie'
+                  OnKeyPress = Edit10KeyPress
+                end
+                object Edit20: TEdit
+                  Left = 14
+                  Top = 181
+                  Width = 250
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 2
+                  TextHint = 'Localitate destinatie'
+                end
+                object Edit21: TEdit
+                  Left = 15
+                  Top = 224
+                  Width = 250
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 3
+                  TextHint = 'Strada destinatie'
+                end
+                object Edit22: TEdit
+                  Left = 14
+                  Top = 267
+                  Width = 98
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 4
+                  TextHint = 'Km'
+                end
+                object Edit23: TEdit
+                  Left = 128
+                  Top = 267
+                  Width = 137
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 5
+                  TextHint = 'Cost/Km'
+                end
+                object Edit24: TEdit
+                  Left = 14
+                  Top = 310
+                  Width = 250
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 6
+                  TextHint = 'Suma calatorie'
+                end
+                object Edit25: TEdit
+                  Left = 14
+                  Top = 353
+                  Width = 250
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 7
+                  TextHint = 'Nota'
+                end
+                object Memo1: TMemo
+                  Left = 15
+                  Top = 15
+                  Width = 250
+                  Height = 70
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -16
+                  Font.Name = 'Segoe UI Semibold'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 8
+                  OnKeyPress = Edit10KeyPress
+                end
+              end
+              object TabSheet18: TTabSheet
+                Caption = 'Editare'
+                ImageIndex = 2
+                object SpeedButton50: TSpeedButton
+                  Left = 285
+                  Top = 15
+                  Width = 41
+                  Height = 70
+                  Cursor = crHandPoint
+                  Caption = '...'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -16
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                end
+                object SpeedButton51: TSpeedButton
+                  Left = 285
+                  Top = 95
+                  Width = 41
+                  Height = 33
+                  Cursor = crHandPoint
+                  Caption = '...'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -16
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                end
+                object SpeedButton52: TSpeedButton
+                  Left = 285
+                  Top = 138
+                  Width = 41
+                  Height = 119
+                  Cursor = crHandPoint
+                  Caption = '...'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -16
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                end
+                object SpeedButton53: TSpeedButton
+                  Left = 16
+                  Top = 406
+                  Width = 110
+                  Height = 50
+                  Caption = 'Executa'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -20
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  OnClick = SpeedButton32Click
+                end
+                object SpeedButton54: TSpeedButton
                   Left = 155
-                  Top = 377
+                  Top = 406
                   Width = 110
                   Height = 50
                   Caption = 'Anuleaza'
@@ -1351,37 +1587,9 @@ object Form1: TForm1
                   ParentFont = False
                   OnClick = SpeedButton33Click
                 end
-                object SpeedButton42: TSpeedButton
-                  Left = 285
-                  Top = 105
-                  Width = 41
-                  Height = 123
-                  Cursor = crHandPoint
-                  Caption = '...'
-                  Font.Charset = DEFAULT_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -16
-                  Font.Name = 'Segoe UI'
-                  Font.Style = [fsBold]
-                  ParentFont = False
-                end
-                object SpeedButton37: TSpeedButton
-                  Left = 285
-                  Top = 60
-                  Width = 41
-                  Height = 33
-                  Cursor = crHandPoint
-                  Caption = '...'
-                  Font.Charset = DEFAULT_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -16
-                  Font.Name = 'Segoe UI'
-                  Font.Style = [fsBold]
-                  ParentFont = False
-                end
-                object Edit17: TEdit
-                  Left = 15
-                  Top = 15
+                object Edit27: TEdit
+                  Left = 16
+                  Top = 95
                   Width = 250
                   Height = 33
                   Font.Charset = DEFAULT_CHARSET
@@ -1391,12 +1599,12 @@ object Form1: TForm1
                   Font.Style = [fsBold]
                   ParentFont = False
                   TabOrder = 0
-                  TextHint = 'Automobil'
+                  TextHint = 'Conducator'
                   OnKeyPress = Edit10KeyPress
                 end
-                object Edit18: TEdit
+                object Edit28: TEdit
                   Left = 16
-                  Top = 60
+                  Top = 138
                   Width = 250
                   Height = 33
                   Font.Charset = DEFAULT_CHARSET
@@ -1406,12 +1614,12 @@ object Form1: TForm1
                   Font.Style = [fsBold]
                   ParentFont = False
                   TabOrder = 1
-                  TextHint = 'Conducator'
+                  TextHint = 'Raion destinatie'
                   OnKeyPress = Edit10KeyPress
                 end
-                object Edit19: TEdit
-                  Left = 16
-                  Top = 105
+                object Edit29: TEdit
+                  Left = 15
+                  Top = 181
                   Width = 250
                   Height = 33
                   Font.Charset = DEFAULT_CHARSET
@@ -1421,12 +1629,11 @@ object Form1: TForm1
                   Font.Style = [fsBold]
                   ParentFont = False
                   TabOrder = 2
-                  TextHint = 'Raion destinatie'
-                  OnKeyPress = Edit10KeyPress
+                  TextHint = 'Localitate destinatie'
                 end
-                object Edit20: TEdit
-                  Left = 15
-                  Top = 150
+                object Edit30: TEdit
+                  Left = 16
+                  Top = 224
                   Width = 250
                   Height = 33
                   Font.Charset = DEFAULT_CHARSET
@@ -1436,25 +1643,11 @@ object Form1: TForm1
                   Font.Style = [fsBold]
                   ParentFont = False
                   TabOrder = 3
-                  TextHint = 'Localitate destinatie'
-                end
-                object Edit21: TEdit
-                  Left = 16
-                  Top = 195
-                  Width = 250
-                  Height = 33
-                  Font.Charset = DEFAULT_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -19
-                  Font.Name = 'Segoe UI'
-                  Font.Style = [fsBold]
-                  ParentFont = False
-                  TabOrder = 4
                   TextHint = 'Strada destinatie'
                 end
-                object Edit22: TEdit
+                object Edit31: TEdit
                   Left = 15
-                  Top = 240
+                  Top = 267
                   Width = 98
                   Height = 33
                   Font.Charset = DEFAULT_CHARSET
@@ -1463,12 +1656,12 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
-                  TabOrder = 5
+                  TabOrder = 4
                   TextHint = 'Km'
                 end
-                object Edit23: TEdit
+                object Edit32: TEdit
                   Left = 129
-                  Top = 240
+                  Top = 267
                   Width = 137
                   Height = 33
                   Font.Charset = DEFAULT_CHARSET
@@ -1477,12 +1670,26 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
-                  TabOrder = 6
+                  TabOrder = 5
                   TextHint = 'Cost/Km'
                 end
-                object Edit24: TEdit
+                object Edit33: TEdit
                   Left = 15
-                  Top = 285
+                  Top = 310
+                  Width = 250
+                  Height = 33
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -19
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsBold]
+                  ParentFont = False
+                  TabOrder = 6
+                  TextHint = 'Suma calatorie'
+                end
+                object Edit34: TEdit
+                  Left = 16
+                  Top = 353
                   Width = 250
                   Height = 33
                   Font.Charset = DEFAULT_CHARSET
@@ -1492,42 +1699,39 @@ object Form1: TForm1
                   Font.Style = [fsBold]
                   ParentFont = False
                   TabOrder = 7
-                  TextHint = 'Suma calatorie'
+                  TextHint = 'Nota'
                 end
-                object Edit25: TEdit
-                  Left = 15
-                  Top = 330
+                object Memo2: TMemo
+                  Left = 16
+                  Top = 15
                   Width = 250
-                  Height = 33
-                  Font.Charset = DEFAULT_CHARSET
+                  Height = 70
+                  Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -19
-                  Font.Name = 'Segoe UI'
+                  Font.Height = -18
+                  Font.Name = 'Segoe UI Semibold'
                   Font.Style = [fsBold]
                   ParentFont = False
                   TabOrder = 8
-                  TextHint = 'Nota'
+                  OnKeyPress = Edit10KeyPress
                 end
-              end
-              object TabSheet18: TTabSheet
-                Caption = 'Editare'
-                ImageIndex = 2
               end
             end
           end
           object Panel25: TPanel
             Left = 351
             Top = 1
-            Width = 882
-            Height = 471
+            Width = 886
+            Height = 508
             Align = alClient
             TabOrder = 1
-            ExplicitHeight = 473
+            ExplicitWidth = 880
+            ExplicitHeight = 504
             object DBGrid10: TDBGrid
               Left = 1
               Top = 1
-              Width = 880
-              Height = 469
+              Width = 884
+              Height = 506
               Align = alClient
               DataSource = DataModule2.DataSource9
               Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -1543,7 +1747,7 @@ object Form1: TForm1
                   FieldName = 'AUTO_ID'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1561,7 +1765,7 @@ object Form1: TForm1
                   FieldName = 'NR_AUTO'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1579,7 +1783,7 @@ object Form1: TForm1
                   FieldName = 'DENUMIRE'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1597,7 +1801,7 @@ object Form1: TForm1
                   FieldName = 'DENUMIRE_1'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1615,7 +1819,7 @@ object Form1: TForm1
                   FieldName = 'TIP_CAROSERIE'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1633,7 +1837,7 @@ object Form1: TForm1
                   FieldName = 'NUME_CULOARE'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1651,7 +1855,7 @@ object Form1: TForm1
                   FieldName = 'MOTOR'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1669,7 +1873,7 @@ object Form1: TForm1
                   FieldName = 'COMBUSTIBIL'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -12
+                  Font.Height = -15
                   Font.Name = 'Segoe UI'
                   Font.Style = []
                   Title.Alignment = taCenter
@@ -1694,15 +1898,14 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 350
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 471
           object PageControl2: TPageControl
             Left = 1
             Top = 1
             Width = 348
-            Height = 471
+            Height = 508
             Cursor = crHandPoint
             ActivePage = TabSheet13
             Align = alClient
@@ -1777,6 +1980,7 @@ object Form1: TForm1
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
                 ParentFont = False
+                OnClick = SpeedButton24Click
               end
               object SpeedButton25: TSpeedButton
                 Left = 70
@@ -1790,6 +1994,7 @@ object Form1: TForm1
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
                 ParentFont = False
+                OnClick = SpeedButton25Click
               end
             end
             object TabSheet14: TTabSheet
@@ -2259,17 +2464,16 @@ object Form1: TForm1
         object Panel22: TPanel
           Left = 350
           Top = 0
-          Width = 884
-          Height = 473
+          Width = 888
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitWidth = 882
-          ExplicitHeight = 471
+          ExplicitWidth = 884
           object DBGrid9: TDBGrid
             Left = 1
             Top = 1
-            Width = 882
-            Height = 471
+            Width = 886
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource9
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -2456,10 +2660,9 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 475
           object SpeedButton17: TSpeedButton
             Left = 40
             Top = 160
@@ -2492,16 +2695,16 @@ object Form1: TForm1
         object Panel20: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 473
+          Width = 1038
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitHeight = 475
+          ExplicitWidth = 1034
           object DBGrid8: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 471
+            Width = 1036
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource8
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -2568,10 +2771,9 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 475
           object SpeedButton15: TSpeedButton
             Left = 40
             Top = 160
@@ -2604,16 +2806,16 @@ object Form1: TForm1
         object Panel18: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 473
+          Width = 1038
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitHeight = 475
+          ExplicitWidth = 1034
           object DBGrid7: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 471
+            Width = 1036
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource7
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -2680,10 +2882,9 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 475
           object SpeedButton13: TSpeedButton
             Left = 40
             Top = 160
@@ -2716,16 +2917,16 @@ object Form1: TForm1
         object Panel16: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 473
+          Width = 1038
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitHeight = 475
+          ExplicitWidth = 1034
           object DBGrid6: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 471
+            Width = 1036
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource6
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -2792,10 +2993,9 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 475
           object SpeedButton11: TSpeedButton
             Left = 40
             Top = 160
@@ -2828,16 +3028,16 @@ object Form1: TForm1
         object Panel14: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 473
+          Width = 1038
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitHeight = 475
+          ExplicitWidth = 1034
           object DBGrid5: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 471
+            Width = 1036
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource5
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -2904,10 +3104,9 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 475
           object SpeedButton9: TSpeedButton
             Left = 40
             Top = 160
@@ -2940,16 +3139,16 @@ object Form1: TForm1
         object Panel12: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 473
+          Width = 1038
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitHeight = 475
+          ExplicitWidth = 1034
           object DBGrid4: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 471
+            Width = 1036
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource4
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -3016,12 +3215,12 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 340
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
           object SpeedButton7: TSpeedButton
             Left = 70
-            Top = 312
+            Top = 168
             Width = 200
             Height = 60
             Caption = 'Selecteaza'
@@ -3034,49 +3233,10 @@ object Form1: TForm1
           end
           object SpeedButton8: TSpeedButton
             Left = 70
-            Top = 387
+            Top = 243
             Width = 200
             Height = 60
             Caption = 'Anuleaza'
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -20
-            Font.Name = 'Segoe UI'
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object SpeedButton47: TSpeedButton
-            Left = 70
-            Top = 15
-            Width = 200
-            Height = 60
-            Caption = 'Inregistreaza'
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -20
-            Font.Name = 'Segoe UI'
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object SpeedButton48: TSpeedButton
-            Left = 70
-            Top = 90
-            Width = 200
-            Height = 60
-            Caption = 'Editare'
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -20
-            Font.Name = 'Segoe UI'
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object SpeedButton49: TSpeedButton
-            Left = 70
-            Top = 165
-            Width = 200
-            Height = 60
-            Caption = 'Eliminare'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -20
@@ -3088,18 +3248,16 @@ object Form1: TForm1
         object Panel10: TPanel
           Left = 340
           Top = 0
-          Width = 894
-          Height = 473
+          Width = 898
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitLeft = 200
-          ExplicitWidth = 1034
-          ExplicitHeight = 475
+          ExplicitWidth = 894
           object DBGrid3: TDBGrid
             Left = 1
             Top = 1
-            Width = 892
-            Height = 471
+            Width = 896
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource3
             TabOrder = 0
@@ -3164,14 +3322,13 @@ object Form1: TForm1
         object Panel7: TPanel
           Left = 0
           Top = 0
-          Width = 200
-          Height = 473
+          Width = 220
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 475
           object SpeedButton5: TSpeedButton
-            Left = 40
-            Top = 160
+            Left = 49
+            Top = 312
             Width = 120
             Height = 60
             Caption = 'Selecteaza'
@@ -3181,10 +3338,11 @@ object Form1: TForm1
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = SpeedButton5Click
           end
           object SpeedButton6: TSpeedButton
-            Left = 40
-            Top = 230
+            Left = 49
+            Top = 382
             Width = 120
             Height = 60
             Caption = 'Anuleaza'
@@ -3194,21 +3352,74 @@ object Form1: TForm1
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = SpeedButton6Click
+          end
+          object GroupBox1: TGroupBox
+            Left = 15
+            Top = 15
+            Width = 185
+            Height = 249
+            Caption = 'Cautare Informatie'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -18
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object RadioButton1: TRadioButton
+              Left = 24
+              Top = 40
+              Width = 113
+              Height = 17
+              Caption = 'Raion'
+              Checked = True
+              TabOrder = 0
+              TabStop = True
+              OnClick = RadioButton1Click
+            end
+            object RadioButton2: TRadioButton
+              Left = 24
+              Top = 80
+              Width = 113
+              Height = 17
+              Caption = 'Localitate'
+              TabOrder = 1
+              OnClick = RadioButton2Click
+            end
+            object RadioButton3: TRadioButton
+              Left = 24
+              Top = 120
+              Width = 113
+              Height = 17
+              Caption = 'Strada'
+              TabOrder = 2
+              OnClick = RadioButton3Click
+            end
+            object Edit17: TEdit
+              Left = 24
+              Top = 176
+              Width = 137
+              Height = 33
+              TabOrder = 3
+              OnChange = Edit17Change
+            end
           end
         end
         object Panel8: TPanel
-          Left = 200
+          Left = 220
           Top = 0
-          Width = 1034
-          Height = 473
+          Width = 1018
+          Height = 510
           Align = alClient
           TabOrder = 1
-          ExplicitHeight = 475
+          ExplicitLeft = 200
+          ExplicitWidth = 1034
           object DBGrid2: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 471
+            Width = 1016
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource2
             TabOrder = 0
@@ -3239,7 +3450,7 @@ object Form1: TForm1
               end
               item
                 Expanded = False
-                FieldName = 'DENUMIRE'
+                FieldName = 'DENUMIRE_1'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -15
@@ -3257,11 +3468,37 @@ object Form1: TForm1
               end
               item
                 Expanded = False
+                FieldName = 'DENUMIRE'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -15
                 Font.Name = 'Segoe UI'
                 Font.Style = []
+                Title.Alignment = taCenter
+                Title.Caption = 'Localitate'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 264
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RAION'
+                Title.Alignment = taCenter
+                Title.Caption = 'Raion'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 286
+                Visible = True
+              end
+              item
+                Expanded = False
                 Visible = True
               end>
           end
@@ -3274,10 +3511,9 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 473
+          Height = 510
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 475
           object SpeedButton3: TSpeedButton
             Left = 40
             Top = 160
@@ -3292,6 +3528,7 @@ object Form1: TForm1
             ParentFont = False
             ParentShowHint = False
             ShowHint = False
+            OnClick = SpeedButton3Click
           end
           object SpeedButton4: TSpeedButton
             Left = 40
@@ -3313,17 +3550,17 @@ object Form1: TForm1
         object Panel6: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 473
+          Width = 1038
+          Height = 510
           Align = alClient
           TabOrder = 1
           OnResize = Panel6Resize
-          ExplicitHeight = 475
+          ExplicitWidth = 1034
           object DBGrid1: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 471
+            Width = 1036
+            Height = 508
             Align = alClient
             DataSource = DataModule2.DataSource1
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -3410,12 +3647,12 @@ object Form1: TForm1
   end
   object Panel3: TPanel
     Left = 0
-    Top = 588
-    Width = 1244
+    Top = 625
+    Width = 1248
     Height = 96
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 584
+    ExplicitTop = 621
     ExplicitWidth = 1242
   end
 end

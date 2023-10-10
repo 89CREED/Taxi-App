@@ -131,7 +131,6 @@ __published:	// IDE-managed Components
 	TSpeedButton *SpeedButton41;
 	TSpeedButton *SpeedButton45;
 	TSpeedButton *SpeedButton46;
-	TEdit *Edit17;
 	TEdit *Edit18;
 	TEdit *Edit19;
 	TEdit *Edit20;
@@ -149,6 +148,26 @@ __published:	// IDE-managed Components
 	TSpeedButton *SpeedButton43;
 	TEdit *Edit14;
 	TSpeedButton *SpeedButton44;
+	TSpeedButton *SpeedButton50;
+	TEdit *Edit27;
+	TSpeedButton *SpeedButton51;
+	TEdit *Edit28;
+	TEdit *Edit29;
+	TEdit *Edit30;
+	TSpeedButton *SpeedButton52;
+	TEdit *Edit31;
+	TEdit *Edit32;
+	TEdit *Edit33;
+	TEdit *Edit34;
+	TSpeedButton *SpeedButton53;
+	TSpeedButton *SpeedButton54;
+	TMemo *Memo1;
+	TMemo *Memo2;
+	TGroupBox *GroupBox1;
+	TRadioButton *RadioButton1;
+	TRadioButton *RadioButton2;
+	TRadioButton *RadioButton3;
+	TEdit *Edit17;
 	void __fastcall SpeedButton1Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall Panel6Resize(TObject *Sender);
@@ -176,6 +195,19 @@ __published:	// IDE-managed Components
 	void __fastcall SpeedButton43Click(TObject *Sender);
 	void __fastcall SpeedButton16Click(TObject *Sender);
 	void __fastcall SpeedButton9Click(TObject *Sender);
+	void __fastcall SpeedButton10Click(TObject *Sender);
+	void __fastcall SpeedButton41Click(TObject *Sender);
+	void __fastcall SpeedButton24Click(TObject *Sender);
+	void __fastcall SpeedButton25Click(TObject *Sender);
+	void __fastcall SpeedButton37Click(TObject *Sender);
+	void __fastcall SpeedButton3Click(TObject *Sender);
+	void __fastcall Edit17Change(TObject *Sender);
+	void __fastcall SpeedButton5Click(TObject *Sender);
+	void __fastcall SpeedButton6Click(TObject *Sender);
+	void __fastcall SpeedButton52Click(TObject *Sender);
+	void __fastcall RadioButton1Click(TObject *Sender);
+	void __fastcall RadioButton2Click(TObject *Sender);
+	void __fastcall RadioButton3Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

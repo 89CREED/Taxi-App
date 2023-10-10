@@ -61,8 +61,7 @@ void __fastcall TForm1::Panel6Resize(TObject *Sender)
 
 
 	int b = DBGrid2->Columns->Items[0]->Width +
-					DBGrid2->Columns->Items[1]->Width;
-	DBGrid2->Columns->Items[2]->Width = w - b - 40;//strada
+			DBGrid2->Columns->Items[1]->Width;
 	DBGrid3->Columns->Items[2]->Width = w - b - 40;//localitatea
 	DBGrid4->Columns->Items[2]->Width = w - b - 40;//tip taxi
 	DBGrid5->Columns->Items[2]->Width = w - b - 40;//caroserie
@@ -81,12 +80,22 @@ void __fastcall TForm1::Panel6Resize(TObject *Sender)
 					DBGrid9->Columns->Items[8]->Width;
   DBGrid9->Columns->Items[9]->Width = w - c - 40;
 
+  int d = DBGrid2->Columns->Items[0]->Width +
+					DBGrid2->Columns->Items[1]->Width +
+					DBGrid2->Columns->Items[2]->Width +
+					DBGrid2->Columns->Items[3]->Width;
+  DBGrid2->Columns->Items[4]->Width = w - d - 40;//strada
+
 	//comanda
-	int j = DBGrid10->Columns->Items[0]->Width +
+	int e = DBGrid10->Columns->Items[0]->Width +
 					DBGrid10->Columns->Items[1]->Width +
 					DBGrid10->Columns->Items[2]->Width +
-					DBGrid10->Columns->Items[3]->Width ;
-	DBGrid10->Columns->Items[4]->Width = w - j - 40;
+					DBGrid10->Columns->Items[3]->Width +
+					DBGrid10->Columns->Items[4]->Width +
+					DBGrid10->Columns->Items[5]->Width +
+					DBGrid10->Columns->Items[6]->Width +
+					DBGrid10->Columns->Items[7]->Width ;
+	DBGrid10->Columns->Items[8]->Width = w - e - 40;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
@@ -210,38 +219,20 @@ void __fastcall TForm1::SpeedButton14Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton32Click(TObject *Sender)
 {
-	if( (Edit3->Text != "") && (Edit4->Text != "") && (Edit5->Text != "") && (Edit6->Text != "") && (Edit7->Text != "") && (Edit8->Text != "") && (Edit9->Text != "") )
-	{
-		DataModule2->Inserare_Auto->Close();
-		DataModule2->Inserare_Auto->ParamByName("MODEL_ID")->AsInteger     = model_id;
-		DataModule2->Inserare_Auto->ParamByName("CULOARE_ID")->AsInteger   = culoare_id;
-		DataModule2->Inserare_Auto->ParamByName("CAROSERIE_ID")->AsInteger = caroserie_id;
-		DataModule2->Inserare_Auto->ParamByName("TIP_ID")->AsInteger       = tip_id;
-		DataModule2->Inserare_Auto->ParamByName("NR_AUTO")->AsString       = Edit9->Text;
-		DataModule2->Inserare_Auto->ParamByName("MOTOR")->AsString         = Edit8->Text;
-		DataModule2->Inserare_Auto->ParamByName("COMBUSTIBIL")->AsString   = ComboBox1->Text;
-		DataModule2->Inserare_Auto->ExecSQL();
 
-		DataModule2->FDQuery9->Close();
-		DataModule2->FDQuery9->Open();
+		DataModule2->Insert_Comanda->Close();
+		DataModule2->Insert_Comanda->ParamByName("AUTO_ID")->AsInteger = automobil_id;
+		DataModule2->Insert_Comanda->ParamByName("LOCALITATE_ID")->AsInteger = strada_id;
+		DataModule2->Insert_Comanda->ParamByName("OPERATOR_ID")->AsInteger = operator_id;
+		DataModule2->Insert_Comanda->ParamByName("NOTA")->AsString = Edit25->Text;
+		DataModule2->Insert_Comanda->ParamByName("ADRESA_DESTINATIE")->AsString = Edit19->Text+", "+Edit20->Text+", "+Edit21->Text;
+		DataModule2->Insert_Comanda->ParamByName("PRET")->AsFloat = StrToFloat(Edit24->Text);
+		DataModule2->Insert_Comanda->ParamByName("KM")->AsFloat = StrToFloat(Edit22->Text);
+		DataModule2->Insert_Comanda->ParamByName("COST_KM")->AsFloat = StrToFloat(Edit23->Text);
+		DataModule2->Insert_Comanda->ExecSQL();
 
-		Edit3->Text 	  = "";
-		Edit4->Text 	  = "";
-		Edit5->Text 	  = "";
-		Edit6->Text 	  = "";
-		Edit7->Text 	  = "";
-		Edit8->Text     = "";
-		Edit9->Text     = "";
-		ComboBox1->Text = "";
 
-		TabSheet14->TabVisible = false; //inserare
-		TabSheet13->TabVisible = true ; //main
-		MessageDlg("Inserare cu succes!", mtInformation, TMsgDlgButtons() << mbOK, 0);
-	}
-	else
-	{
-		ShowMessage("Nu sunt introduse toate cimpurile");
-  }
+
 }
 //---------------------------------------------------------------------------
 
@@ -464,8 +455,8 @@ void __fastcall TForm1::SpeedButton24Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton25Click(TObject *Sender)
 {
-    TabSheet2->TabVisible = false;
-	TabSheet3->TabVisible = true;
+	TabSheet2->TabVisible = true;
+	TabSheet3->TabVisible = false;
 }
 //---------------------------------------------------------------------------
 
@@ -496,17 +487,20 @@ void __fastcall TForm1::Edit17Change(TObject *Sender)
 	if(Edit17->Text.Length()>2)
 	{
 		DataModule2->FDQuery2->Close();
+
 		DataModule2->FDQuery2->SQL->Clear();
+
 		DataModule2->FDQuery2->SQL->Add(" SELECT * FROM RAION R INNER JOIN LOCALITATE L ON R.RAION_ID=L.RAION_ID ");
 		DataModule2->FDQuery2->SQL->Add(" INNER JOIN STRADA S ON S.LOCALITATE_ID=L.LOCALITATE_ID ");
 
-		if (RadioButton1->Checked) DataModule2->FDQuery2->SQL->Add(" where raion like '%"+Edit17->Text+"%' ");
-		if (RadioButton2->Checked) DataModule2->FDQuery2->SQL->Add(" where denumire like '%"+Edit17->Text+"%' ");
-		if (RadioButton3->Checked) DataModule2->FDQuery2->SQL->Add(" where denumire_1 like '%"+Edit17->Text+"%' ");
+		if (RadioButton1->Checked) DataModule2->FDQuery2->SQL->Add(" where raion like '%" + Edit17->Text + "%' ");
+		if (RadioButton2->Checked) DataModule2->FDQuery2->SQL->Add(" where L.DENUMIRE like '%" + Edit17->Text + "%' ");
+		if (RadioButton3->Checked) DataModule2->FDQuery2->SQL->Add(" where S.DENUMIRE like '%" + Edit17->Text + "%' ");
+				DataModule2->FDQuery2->Open();
 	}
 	else
 	{
-		DataModule2->FDQuery2->Open();
+		DataModule2->FDQuery2->Close();
 	}
 }
 //---------------------------------------------------------------------------
@@ -515,24 +509,24 @@ void __fastcall TForm1::SpeedButton5Click(TObject *Sender)
 {
 	try
 	{
-		if((DataModule2->FDQuery1->Active==true) && (!DataModule2->FDQuery1->IsEmpty()))
+		if((DataModule2->FDQuery2->Active==true) && (!DataModule2->FDQuery2->IsEmpty()))
 		{
-			Edit19->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit20->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit21->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
+			Edit19->Text = DataModule2->FDQuery2->FieldByName("raion")     ->AsString;
+			Edit20->Text = DataModule2->FDQuery2->FieldByName("denumire")  ->AsString;
+			Edit21->Text = DataModule2->FDQuery2->FieldByName("denumire_1")->AsString;
 
-			Edit28->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit29->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
-			Edit30->Text=DataModule2->FDQuery1->FieldByName("raion")->AsString;
+			Edit28->Text = DataModule2->FDQuery2->FieldByName("raion")     ->AsString;
+			Edit29->Text = DataModule2->FDQuery2->FieldByName("denumire")  ->AsString;
+			Edit30->Text = DataModule2->FDQuery2->FieldByName("denumire_1")->AsString;
 
-			strada_id=DataModule2->FDQuery1->FieldByName("strada_id")->AsInteger;
+			strada_id=DataModule2->FDQuery2->FieldByName("strada_id")->AsInteger;
 
 			TabSheet10->TabVisible = false;
 			TabSheet2->TabVisible = true;
 		}
 		else
 		{
-		   ShowMessage("Nu aveti date selectate!");
+		   ShowMessage("Nu aveti date de selectat!");
         }
 	}
 	catch(...)
@@ -544,18 +538,58 @@ void __fastcall TForm1::SpeedButton5Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton6Click(TObject *Sender)
 {
-    TabSheet10->TabVisible = false;
+	TabSheet10->TabVisible = false;
 	TabSheet2->TabVisible = true;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::SpeedButton52Click(TObject *Sender)
-{
-	DataModule2->FDQuery1->Close();
-	RadioButton3->Checked=true;
-	TabSheet10->TabVisible = true;
-	TabSheet2->TabVisible = false;
 
+void __fastcall TForm1::RadioButton1Click(TObject *Sender)
+{
+	if(RadioButton1->Checked)
+	{
+		Edit17->Clear();
+		Edit17->SetFocus();
+		Edit17->TextHint="Raion";
+	}
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton2Click(TObject *Sender)
+{
+    if(RadioButton2->Checked)
+	{
+		Edit17->Clear();
+		Edit17->SetFocus();
+		Edit17->TextHint="Localitate";
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton3Click(TObject *Sender)
+{
+	if(RadioButton3->Checked)
+	{
+		Edit17->Clear();
+		Edit17->SetFocus();
+		Edit17->TextHint="Strada";
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::SpeedButton42Click(TObject *Sender)
+{
+  TabSheet10->TabVisible = true;
+	TabSheet2->TabVisible = false;
+	DataModule2->FDQuery1->Close();
+	RadioButton3->Checked=true;
+	Edit17->Clear();
+	if(RadioButton3->Checked)
+	{
+      Edit17->TextHint="Strada";
+  }
+}
+//---------------------------------------------------------------------------
+
 
