@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 721
-  ClientWidth = 1244
+  ClientHeight = 726
+  ClientWidth = 1436
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,39 +16,43 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1244
+    Width = 1436
     Height = 81
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1242
+    ExplicitWidth = 1434
   end
   object Panel2: TPanel
     Left = 0
     Top = 81
-    Width = 1244
-    Height = 544
+    Width = 1436
+    Height = 549
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 1242
-    ExplicitHeight = 540
+    ExplicitWidth = 1434
+    ExplicitHeight = 545
     object PageControl1: TPageControl
       Left = 1
       Top = 1
-      Width = 1242
-      Height = 542
-      ActivePage = TabSheet10
+      Width = 1434
+      Height = 547
+      ActivePage = TabSheet12
       Align = alClient
-      Font.Charset = DEFAULT_CHARSET
+      Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Height = -19
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold, fsItalic]
       ParentFont = False
       TabOrder = 0
-      ExplicitWidth = 1240
-      ExplicitHeight = 538
       object TabSheet1: TTabSheet
         Caption = 'Autentificare'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -21
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
         object Panel4: TPanel
           Left = 312
           Top = 88
@@ -1219,24 +1223,26 @@ object Form1: TForm1
         object Panel24: TPanel
           Left = 0
           Top = 0
-          Width = 1234
-          Height = 510
+          Width = 1426
+          Height = 507
           Align = alClient
           TabOrder = 0
+          ExplicitHeight = 515
           object Panel23: TPanel
             Left = 1
             Top = 1
             Width = 350
-            Height = 508
+            Height = 505
             Align = alLeft
             TabOrder = 0
+            ExplicitHeight = 513
             object PageControl3: TPageControl
               Left = 1
               Top = 1
               Width = 348
-              Height = 506
+              Height = 503
               Cursor = crHandPoint
-              ActivePage = TabSheet17
+              ActivePage = TabSheet16
               Align = alClient
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
@@ -1245,6 +1251,7 @@ object Form1: TForm1
               Font.Style = []
               ParentFont = False
               TabOrder = 0
+              ExplicitHeight = 511
               object TabSheet16: TTabSheet
                 Caption = 'Main'
                 Font.Charset = DEFAULT_CHARSET
@@ -1265,6 +1272,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton21Click
                 end
                 object SpeedButton22: TSpeedButton
                   Left = 70
@@ -1278,6 +1286,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton22Click
                 end
                 object SpeedButton30: TSpeedButton
                   Left = 70
@@ -1291,6 +1300,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton30Click
                 end
                 object SpeedButton40: TSpeedButton
                   Left = 70
@@ -1304,6 +1314,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton40Click
                 end
               end
               object TabSheet17: TTabSheet
@@ -1336,7 +1347,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
-                  OnClick = SpeedButton32Click
+                  OnClick = SpeedButton45Click
                 end
                 object SpeedButton46: TSpeedButton
                   Left = 154
@@ -1350,6 +1361,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton46Click
                 end
                 object SpeedButton42: TSpeedButton
                   Left = 284
@@ -1412,7 +1424,7 @@ object Form1: TForm1
                   OnKeyPress = Edit10KeyPress
                 end
                 object Edit20: TEdit
-                  Left = 14
+                  Left = 15
                   Top = 181
                   Width = 250
                   Height = 33
@@ -1440,7 +1452,7 @@ object Form1: TForm1
                   TextHint = 'Strada destinatie'
                 end
                 object Edit22: TEdit
-                  Left = 14
+                  Left = 15
                   Top = 267
                   Width = 98
                   Height = 33
@@ -1452,6 +1464,7 @@ object Form1: TForm1
                   ParentFont = False
                   TabOrder = 4
                   TextHint = 'Km'
+                  OnChange = Edit23Change
                 end
                 object Edit23: TEdit
                   Left = 128
@@ -1466,9 +1479,10 @@ object Form1: TForm1
                   ParentFont = False
                   TabOrder = 5
                   TextHint = 'Cost/Km'
+                  OnChange = Edit23Change
                 end
                 object Edit24: TEdit
-                  Left = 14
+                  Left = 15
                   Top = 310
                   Width = 250
                   Height = 33
@@ -1482,7 +1496,7 @@ object Form1: TForm1
                   TextHint = 'Suma calatorie'
                 end
                 object Edit25: TEdit
-                  Left = 14
+                  Left = 15
                   Top = 353
                   Width = 250
                   Height = 33
@@ -1526,6 +1540,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton41Click
                 end
                 object SpeedButton51: TSpeedButton
                   Left = 285
@@ -1540,6 +1555,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton37Click
                 end
                 object SpeedButton52: TSpeedButton
                   Left = 285
@@ -1554,9 +1570,10 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
+                  OnClick = SpeedButton42Click
                 end
                 object SpeedButton53: TSpeedButton
-                  Left = 16
+                  Left = 15
                   Top = 406
                   Width = 110
                   Height = 50
@@ -1567,7 +1584,7 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
-                  OnClick = SpeedButton32Click
+                  OnClick = SpeedButton53Click
                 end
                 object SpeedButton54: TSpeedButton
                   Left = 155
@@ -1581,10 +1598,10 @@ object Form1: TForm1
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
                   ParentFont = False
-                  OnClick = SpeedButton33Click
+                  OnClick = SpeedButton54Click
                 end
                 object Edit27: TEdit
-                  Left = 16
+                  Left = 15
                   Top = 95
                   Width = 250
                   Height = 33
@@ -1599,7 +1616,7 @@ object Form1: TForm1
                   OnKeyPress = Edit10KeyPress
                 end
                 object Edit28: TEdit
-                  Left = 16
+                  Left = 15
                   Top = 138
                   Width = 250
                   Height = 33
@@ -1628,7 +1645,7 @@ object Form1: TForm1
                   TextHint = 'Localitate destinatie'
                 end
                 object Edit30: TEdit
-                  Left = 16
+                  Left = 15
                   Top = 224
                   Width = 250
                   Height = 33
@@ -1684,7 +1701,7 @@ object Form1: TForm1
                   TextHint = 'Suma calatorie'
                 end
                 object Edit34: TEdit
-                  Left = 16
+                  Left = 15
                   Top = 353
                   Width = 250
                   Height = 33
@@ -1698,13 +1715,13 @@ object Form1: TForm1
                   TextHint = 'Nota'
                 end
                 object Memo2: TMemo
-                  Left = 16
+                  Left = 15
                   Top = 15
                   Width = 250
                   Height = 70
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -18
+                  Font.Height = -16
                   Font.Name = 'Segoe UI Semibold'
                   Font.Style = [fsBold]
                   ParentFont = False
@@ -1717,33 +1734,41 @@ object Form1: TForm1
           object Panel25: TPanel
             Left = 351
             Top = 1
-            Width = 882
-            Height = 508
+            Width = 1074
+            Height = 505
             Align = alClient
             TabOrder = 1
+            ExplicitHeight = 513
             object DBGrid10: TDBGrid
               Left = 1
               Top = 1
-              Width = 880
-              Height = 506
+              Width = 1072
+              Height = 503
               Align = alClient
-              DataSource = DataModule2.DataSource9
+              DataSource = DataModule2.DataSource11
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -16
+              Font.Name = 'Segoe UI Semibold'
+              Font.Style = [fsBold, fsItalic]
               Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+              ParentFont = False
               TabOrder = 0
-              TitleFont.Charset = DEFAULT_CHARSET
+              TitleFont.Charset = ANSI_CHARSET
               TitleFont.Color = clWindowText
-              TitleFont.Height = -13
-              TitleFont.Name = 'Segoe UI'
-              TitleFont.Style = []
+              TitleFont.Height = -19
+              TitleFont.Name = 'Segoe UI Semibold'
+              TitleFont.Style = [fsBold, fsItalic]
               Columns = <
                 item
+                  Alignment = taCenter
                   Expanded = False
                   FieldName = 'AUTO_ID'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
                   Title.Caption = 'Nr'
                   Title.Font.Charset = ANSI_CHARSET
@@ -1751,7 +1776,25 @@ object Form1: TForm1
                   Title.Font.Height = -15
                   Title.Font.Name = 'Segoe UI Semibold'
                   Title.Font.Style = [fsBold]
-                  Width = 28
+                  Width = 40
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'DATA_CALATORIE'
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -13
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsItalic]
+                  Title.Alignment = taCenter
+                  Title.Caption = 'Data'
+                  Title.Font.Charset = ANSI_CHARSET
+                  Title.Font.Color = clWindowText
+                  Title.Font.Height = -15
+                  Title.Font.Name = 'Segoe UI Semibold'
+                  Title.Font.Style = [fsBold]
+                  Width = 82
                   Visible = True
                 end
                 item
@@ -1759,9 +1802,9 @@ object Form1: TForm1
                   FieldName = 'NR_AUTO'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
                   Title.Caption = 'Nr Inmatriculare'
                   Title.Font.Charset = ANSI_CHARSET
@@ -1774,12 +1817,12 @@ object Form1: TForm1
                 end
                 item
                   Expanded = False
-                  FieldName = 'DENUMIRE'
+                  FieldName = 'DENUMIRE_1'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
                   Title.Caption = 'Marca'
                   Title.Font.Charset = ANSI_CHARSET
@@ -1787,17 +1830,17 @@ object Form1: TForm1
                   Title.Font.Height = -15
                   Title.Font.Name = 'Segoe UI Semibold'
                   Title.Font.Style = [fsBold]
-                  Width = 121
+                  Width = 111
                   Visible = True
                 end
                 item
                   Expanded = False
-                  FieldName = 'DENUMIRE_1'
+                  FieldName = 'DENUMIRE'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
                   Title.Caption = 'Model'
                   Title.Font.Charset = ANSI_CHARSET
@@ -1805,83 +1848,106 @@ object Form1: TForm1
                   Title.Font.Height = -15
                   Title.Font.Name = 'Segoe UI Semibold'
                   Title.Font.Style = [fsBold]
-                  Width = 141
+                  Width = 109
                   Visible = True
                 end
                 item
                   Expanded = False
-                  FieldName = 'TIP_CAROSERIE'
+                  FieldName = 'SOFER'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
-                  Title.Caption = 'Caroserie'
+                  Title.Caption = 'Conducator'
                   Title.Font.Charset = ANSI_CHARSET
                   Title.Font.Color = clWindowText
                   Title.Font.Height = -15
                   Title.Font.Name = 'Segoe UI Semibold'
                   Title.Font.Style = [fsBold]
-                  Width = 98
+                  Width = 166
                   Visible = True
                 end
                 item
                   Expanded = False
-                  FieldName = 'NUME_CULOARE'
+                  FieldName = 'ADRESA_DESTINATIE'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
-                  Title.Caption = 'Culoare'
+                  Title.Caption = 'Adresa'
                   Title.Font.Charset = ANSI_CHARSET
                   Title.Font.Color = clWindowText
                   Title.Font.Height = -15
                   Title.Font.Name = 'Segoe UI Semibold'
                   Title.Font.Style = [fsBold]
-                  Width = 103
+                  Width = 198
                   Visible = True
                 end
                 item
                   Expanded = False
-                  FieldName = 'MOTOR'
+                  FieldName = 'KM'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
-                  Title.Caption = 'Capacitate Motor'
+                  Title.Caption = 'Km'
                   Title.Font.Charset = ANSI_CHARSET
                   Title.Font.Color = clWindowText
                   Title.Font.Height = -15
                   Title.Font.Name = 'Segoe UI Semibold'
                   Title.Font.Style = [fsBold]
-                  Width = 129
                   Visible = True
                 end
                 item
                   Expanded = False
-                  FieldName = 'COMBUSTIBIL'
+                  FieldName = 'COST_KM'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
-                  Font.Height = -15
+                  Font.Height = -13
                   Font.Name = 'Segoe UI'
-                  Font.Style = []
+                  Font.Style = [fsItalic]
                   Title.Alignment = taCenter
-                  Title.Caption = 'Combustibil'
+                  Title.Caption = 'Pret/Km'
                   Title.Font.Charset = ANSI_CHARSET
                   Title.Font.Color = clWindowText
                   Title.Font.Height = -15
                   Title.Font.Name = 'Segoe UI Semibold'
                   Title.Font.Style = [fsBold]
-                  Width = 119
+                  Width = 69
                   Visible = True
                 end
                 item
                   Expanded = False
+                  FieldName = 'PRET'
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -13
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsItalic]
+                  Title.Alignment = taCenter
+                  Title.Caption = 'Pret'
+                  Title.Font.Charset = ANSI_CHARSET
+                  Title.Font.Color = clWindowText
+                  Title.Font.Height = -15
+                  Title.Font.Name = 'Segoe UI Semibold'
+                  Title.Font.Style = [fsBold]
+                  Width = 74
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -13
+                  Font.Name = 'Segoe UI'
+                  Font.Style = [fsItalic]
+                  Width = 15
                   Visible = True
                 end>
             end
@@ -1896,17 +1962,17 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 350
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 506
+          ExplicitHeight = 515
           object PageControl2: TPageControl
             Left = 1
             Top = 1
             Width = 348
-            Height = 508
+            Height = 505
             Cursor = crHandPoint
-            ActivePage = TabSheet13
+            ActivePage = TabSheet14
             Align = alClient
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
@@ -1917,7 +1983,7 @@ object Form1: TForm1
             TabHeight = 1
             TabOrder = 0
             TabWidth = 1
-            ExplicitHeight = 504
+            ExplicitHeight = 513
             object TabSheet13: TTabSheet
               Caption = 'Main'
               Font.Charset = DEFAULT_CHARSET
@@ -2366,7 +2432,7 @@ object Form1: TForm1
               end
               object Edit12: TEdit
                 Left = 15
-                Top = 101
+                Top = 105
                 Width = 250
                 Height = 33
                 Font.Charset = DEFAULT_CHARSET
@@ -2464,35 +2530,40 @@ object Form1: TForm1
         object Panel22: TPanel
           Left = 350
           Top = 0
-          Width = 884
-          Height = 510
+          Width = 1076
+          Height = 507
           Align = alClient
           TabOrder = 1
-          ExplicitWidth = 882
-          ExplicitHeight = 506
+          ExplicitHeight = 515
           object DBGrid9: TDBGrid
             Left = 1
             Top = 1
-            Width = 882
-            Height = 508
+            Width = 1074
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource9
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Expanded = False
                 FieldName = 'AUTO_ID'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2500,7 +2571,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -2508,9 +2579,9 @@ object Form1: TForm1
                 FieldName = 'NR_AUTO'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr Inmatriculare'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2526,9 +2597,9 @@ object Form1: TForm1
                 FieldName = 'DENUMIRE_1'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Marca'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2544,9 +2615,9 @@ object Form1: TForm1
                 FieldName = 'DENUMIRE'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Model'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2562,9 +2633,9 @@ object Form1: TForm1
                 FieldName = 'TIP_CAROSERIE'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Caroserie'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2580,9 +2651,9 @@ object Form1: TForm1
                 FieldName = 'NUME_CULOARE'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Culoare'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2598,9 +2669,9 @@ object Form1: TForm1
                 FieldName = 'TIP_TAXI'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Tip Taxi'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2616,9 +2687,9 @@ object Form1: TForm1
                 FieldName = 'MOTOR'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'C. P.'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2634,9 +2705,9 @@ object Form1: TForm1
                 FieldName = 'COMBUSTIBIL'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Combustibil'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2649,6 +2720,11 @@ object Form1: TForm1
               end
               item
                 Expanded = False
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI Semibold'
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -2661,9 +2737,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton17: TSpeedButton
             Left = 40
             Top = 160
@@ -2696,24 +2773,31 @@ object Form1: TForm1
         object Panel20: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 510
+          Width = 1226
+          Height = 507
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 515
           object DBGrid8: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 508
+            Width = 1224
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource8
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -2721,9 +2805,9 @@ object Form1: TForm1
                 FieldName = 'MODEL_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2731,7 +2815,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -2739,9 +2823,9 @@ object Form1: TForm1
                 FieldName = 'DENUMIRE'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Model Automobil'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2756,9 +2840,9 @@ object Form1: TForm1
                 Expanded = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -2771,9 +2855,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton15: TSpeedButton
             Left = 40
             Top = 160
@@ -2806,24 +2891,31 @@ object Form1: TForm1
         object Panel18: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 510
+          Width = 1226
+          Height = 507
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 515
           object DBGrid7: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 508
+            Width = 1224
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource7
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -2831,9 +2923,9 @@ object Form1: TForm1
                 FieldName = 'MARCA_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2841,7 +2933,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -2849,9 +2941,9 @@ object Form1: TForm1
                 FieldName = 'DENUMIRE'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Marca Automobil'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2866,9 +2958,9 @@ object Form1: TForm1
                 Expanded = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -2881,9 +2973,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton13: TSpeedButton
             Left = 40
             Top = 160
@@ -2916,24 +3009,31 @@ object Form1: TForm1
         object Panel16: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 510
+          Width = 1226
+          Height = 507
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 515
           object DBGrid6: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 508
+            Width = 1224
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource6
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -2941,9 +3041,9 @@ object Form1: TForm1
                 FieldName = 'CULOARE_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2951,7 +3051,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -2959,9 +3059,9 @@ object Form1: TForm1
                 FieldName = 'NUME_CULOARE'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Culoare'
                 Title.Font.Charset = ANSI_CHARSET
@@ -2976,9 +3076,9 @@ object Form1: TForm1
                 Expanded = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -2991,9 +3091,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton11: TSpeedButton
             Left = 40
             Top = 160
@@ -3026,24 +3127,31 @@ object Form1: TForm1
         object Panel14: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 510
+          Width = 1226
+          Height = 507
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 515
           object DBGrid5: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 508
+            Width = 1224
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource5
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -3051,9 +3159,9 @@ object Form1: TForm1
                 FieldName = 'CAROSERIE_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3061,7 +3169,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -3069,9 +3177,9 @@ object Form1: TForm1
                 FieldName = 'TIP_CAROSERIE'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Tip Caroserie'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3086,9 +3194,9 @@ object Form1: TForm1
                 Expanded = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -3101,9 +3209,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton9: TSpeedButton
             Left = 40
             Top = 160
@@ -3136,24 +3245,31 @@ object Form1: TForm1
         object Panel12: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 510
+          Width = 1226
+          Height = 507
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 515
           object DBGrid4: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 508
+            Width = 1224
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource4
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -3161,9 +3277,9 @@ object Form1: TForm1
                 FieldName = 'TIP_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3171,7 +3287,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -3179,9 +3295,9 @@ object Form1: TForm1
                 FieldName = 'TIP_TAXI'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Tip Taxi'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3196,9 +3312,9 @@ object Form1: TForm1
                 Expanded = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -3211,9 +3327,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton7: TSpeedButton
             Left = 40
             Top = 168
@@ -3244,23 +3361,30 @@ object Form1: TForm1
         object Panel10: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 510
+          Width = 1226
+          Height = 507
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 515
           object DBGrid3: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 508
+            Width = 1224
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource3
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -3268,9 +3392,9 @@ object Form1: TForm1
                 FieldName = 'LOCALITATE_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3278,7 +3402,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -3286,9 +3410,9 @@ object Form1: TForm1
                 FieldName = 'DENUMIRE'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Localitatea'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3303,9 +3427,9 @@ object Form1: TForm1
                 Expanded = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -3318,9 +3442,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 220
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton5: TSpeedButton
             Left = 50
             Top = 319
@@ -3404,23 +3529,30 @@ object Form1: TForm1
         object Panel8: TPanel
           Left = 220
           Top = 0
-          Width = 1014
-          Height = 510
+          Width = 1206
+          Height = 507
           Align = alClient
           TabOrder = 1
+          ExplicitHeight = 515
           object DBGrid2: TDBGrid
             Left = 1
             Top = 1
-            Width = 1012
-            Height = 508
+            Width = 1204
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource2
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -3428,9 +3560,9 @@ object Form1: TForm1
                 FieldName = 'STRADA_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3438,7 +3570,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -3446,9 +3578,9 @@ object Form1: TForm1
                 FieldName = 'DENUMIRE_1'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Strada'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3464,9 +3596,9 @@ object Form1: TForm1
                 FieldName = 'DENUMIRE'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Localitate'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3480,6 +3612,11 @@ object Form1: TForm1
               item
                 Expanded = False
                 FieldName = 'RAION'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI Semibold'
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Raion'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3492,6 +3629,11 @@ object Form1: TForm1
               end
               item
                 Expanded = False
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI Semibold'
+                Font.Style = [fsItalic]
                 Visible = True
               end>
           end
@@ -3504,9 +3646,10 @@ object Form1: TForm1
           Left = 0
           Top = 0
           Width = 200
-          Height = 510
+          Height = 507
           Align = alLeft
           TabOrder = 0
+          ExplicitHeight = 515
           object SpeedButton3: TSpeedButton
             Left = 40
             Top = 160
@@ -3543,25 +3686,32 @@ object Form1: TForm1
         object Panel6: TPanel
           Left = 200
           Top = 0
-          Width = 1034
-          Height = 510
+          Width = 1226
+          Height = 507
           Align = alClient
           TabOrder = 1
           OnResize = Panel6Resize
+          ExplicitHeight = 515
           object DBGrid1: TDBGrid
             Left = 1
             Top = 1
-            Width = 1032
-            Height = 508
+            Width = 1224
+            Height = 505
             Align = alClient
             DataSource = DataModule2.DataSource1
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
             Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Charset = ANSI_CHARSET
             TitleFont.Color = clWindowText
-            TitleFont.Height = -13
-            TitleFont.Name = 'Segoe UI'
-            TitleFont.Style = []
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
             Columns = <
               item
                 Alignment = taCenter
@@ -3569,9 +3719,9 @@ object Form1: TForm1
                 FieldName = 'OPERATOR_ID'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nr'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3579,7 +3729,7 @@ object Form1: TForm1
                 Title.Font.Height = -15
                 Title.Font.Name = 'Segoe UI Semibold'
                 Title.Font.Style = [fsBold]
-                Width = 36
+                Width = 40
                 Visible = True
               end
               item
@@ -3587,9 +3737,9 @@ object Form1: TForm1
                 FieldName = 'NUME'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Nume'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3605,9 +3755,9 @@ object Form1: TForm1
                 FieldName = 'PRENUME'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Title.Alignment = taCenter
                 Title.Caption = 'Prenume'
                 Title.Font.Charset = ANSI_CHARSET
@@ -3622,9 +3772,9 @@ object Form1: TForm1
                 Expanded = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -15
+                Font.Height = -13
                 Font.Name = 'Segoe UI'
-                Font.Style = []
+                Font.Style = [fsItalic]
                 Width = 78
                 Visible = True
               end>
@@ -3634,17 +3784,362 @@ object Form1: TForm1
       object TabSheet12: TTabSheet
         Caption = 'Cautare'
         ImageIndex = 11
+        object Panel26: TPanel
+          Left = 0
+          Top = 0
+          Width = 240
+          Height = 507
+          Align = alLeft
+          TabOrder = 0
+          ExplicitHeight = 515
+          object SpeedButton47: TSpeedButton
+            Left = 48
+            Top = 264
+            Width = 137
+            Height = 49
+            Caption = 'Cauta'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -20
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = SpeedButton47Click
+          end
+          object SpeedButton48: TSpeedButton
+            Left = 48
+            Top = 336
+            Width = 137
+            Height = 49
+            Caption = 'Anuleaza'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -20
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = SpeedButton48Click
+          end
+          object CheckBox1: TCheckBox
+            Left = 16
+            Top = 24
+            Width = 129
+            Height = 17
+            Caption = 'Nr. Automobil'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            OnClick = CheckBox1Click
+          end
+          object Edit26: TEdit
+            Left = 16
+            Top = 47
+            Width = 201
+            Height = 29
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+          end
+          object CheckBox2: TCheckBox
+            Left = 16
+            Top = 96
+            Width = 129
+            Height = 17
+            Caption = 'Adresa'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            OnClick = CheckBox2Click
+          end
+          object Edit35: TEdit
+            Left = 16
+            Top = 119
+            Width = 201
+            Height = 29
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+          end
+          object CheckBox3: TCheckBox
+            Left = 16
+            Top = 168
+            Width = 129
+            Height = 17
+            Caption = 'Conducator'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+            OnClick = CheckBox3Click
+          end
+          object Edit36: TEdit
+            Left = 16
+            Top = 191
+            Width = 201
+            Height = 29
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 5
+          end
+        end
+        object Panel27: TPanel
+          Left = 240
+          Top = 0
+          Width = 1186
+          Height = 507
+          Align = alClient
+          TabOrder = 1
+          ExplicitHeight = 515
+          object DBGrid11: TDBGrid
+            Left = 1
+            Top = 1
+            Width = 1184
+            Height = 505
+            Align = alClient
+            DataSource = DataModule2.DataSource12
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold, fsItalic]
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
+            TabOrder = 0
+            TitleFont.Charset = ANSI_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -19
+            TitleFont.Name = 'Segoe UI Semibold'
+            TitleFont.Style = [fsBold, fsItalic]
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'AUTO_ID'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Nr'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 40
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CALATORIE'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Data'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 82
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NR_AUTO'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Nr Inmatriculare'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 119
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DENUMIRE_1'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Marca'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 111
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DENUMIRE'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Model'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 109
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'SOFER'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Conducator'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 166
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ADRESA_DESTINATIE'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Adresa'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 198
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'KM'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Km'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'COST_KM'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Pret/Km'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 69
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PRET'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Title.Alignment = taCenter
+                Title.Caption = 'Pret'
+                Title.Font.Charset = ANSI_CHARSET
+                Title.Font.Color = clWindowText
+                Title.Font.Height = -15
+                Title.Font.Name = 'Segoe UI Semibold'
+                Title.Font.Style = [fsBold]
+                Width = 74
+                Visible = True
+              end
+              item
+                Expanded = False
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsItalic]
+                Width = 15
+                Visible = True
+              end>
+          end
+        end
       end
     end
   end
   object Panel3: TPanel
     Left = 0
-    Top = 625
-    Width = 1244
+    Top = 630
+    Width = 1436
     Height = 96
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 621
-    ExplicitWidth = 1242
+    ExplicitTop = 626
+    ExplicitWidth = 1434
   end
 end

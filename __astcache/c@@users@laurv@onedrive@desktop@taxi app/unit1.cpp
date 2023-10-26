@@ -21,11 +21,15 @@ void __fastcall TForm1::SpeedButton1Click(TObject *Sender)
 	if( (Edit1->Text == "1") && (Edit2->Text == "1") )
 	{
     //automobil
-		DataModule2->FDQuery9->Close();
-		DataModule2->FDQuery9->Open();
+		DataModule2->FDQuery11->Close();
+		DataModule2->FDQuery11->Open();
+
+		TabSheet18->TabVisible = false;//inserare(comanda)
+		TabSheet17->TabVisible = false;//editare(comanda)
 
 		TabSheet1->TabVisible=false;//autentificare
 		TabSheet2->TabVisible=true;
+
 	}
 	else
 	{
@@ -94,8 +98,10 @@ void __fastcall TForm1::Panel6Resize(TObject *Sender)
 					DBGrid10->Columns->Items[4]->Width +
 					DBGrid10->Columns->Items[5]->Width +
 					DBGrid10->Columns->Items[6]->Width +
-					DBGrid10->Columns->Items[7]->Width ;
-	DBGrid10->Columns->Items[8]->Width = w - e - 40;
+					DBGrid10->Columns->Items[7]->Width +
+					DBGrid10->Columns->Items[8]->Width +
+					DBGrid10->Columns->Items[9]->Width;
+	DBGrid10->Columns->Items[10]->Width = w - e - 40;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
@@ -183,7 +189,7 @@ void __fastcall TForm1::SpeedButton11Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton12Click(TObject *Sender)
 {
-  TabSheet7->TabVisible = false;
+	TabSheet7->TabVisible = false;
 	TabSheet3->TabVisible = true;
 }
 //---------------------------------------------------------------------------
@@ -212,26 +218,55 @@ void __fastcall TForm1::SpeedButton13Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton14Click(TObject *Sender)
 {
-  TabSheet6->TabVisible = false;
+  	TabSheet6->TabVisible = false;
 	TabSheet3->TabVisible = true;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::SpeedButton32Click(TObject *Sender)
 {
+	//try
+	//{
+		if(( !Edit3->Text.IsEmpty() ) && ( !Edit4->Text.IsEmpty() ) && ( !Edit5->Text.IsEmpty() ) && ( !Edit6->Text.IsEmpty() ) && ( !Edit7->Text.IsEmpty() ) && ( !Edit8->Text.IsEmpty() ) && ( !ComboBox1->Text.IsEmpty() ) && ( !Edit9->Text.IsEmpty() ) )
+		{
+			DataModule2->Insert_Auto->Close();
+			DataModule2->Insert_Auto->ParamByName("MODEL_ID")->AsInteger = model_id;
+			DataModule2->Insert_Auto->ParamByName("CULOARE_ID")->AsInteger = culoare_id;
+			DataModule2->Insert_Auto->ParamByName("CAROSERIE_ID")->AsInteger = caroserie_id;
+			DataModule2->Insert_Auto->ParamByName("TIP_ID")->AsInteger = tip_id;
+			DataModule2->Insert_Auto->ParamByName("NR_AUTO")->AsString = Edit9->Text;
+			DataModule2->Insert_Auto->ParamByName("MOTOR")->AsString = Edit8->Text;
+			DataModule2->Insert_Auto->ParamByName("COMBUSTIBIL")->AsString = ComboBox1->Text;
+			DataModule2->Insert_Auto->ExecSQL();
 
-		DataModule2->Insert_Comanda->Close();
-		DataModule2->Insert_Comanda->ParamByName("AUTO_ID")->AsInteger = automobil_id;
-		DataModule2->Insert_Comanda->ParamByName("LOCALITATE_ID")->AsInteger = strada_id;
-		DataModule2->Insert_Comanda->ParamByName("OPERATOR_ID")->AsInteger = operator_id;
-		DataModule2->Insert_Comanda->ParamByName("NOTA")->AsString = Edit25->Text;
-		DataModule2->Insert_Comanda->ParamByName("ADRESA_DESTINATIE")->AsString = Edit19->Text+", "+Edit20->Text+", "+Edit21->Text;
-		DataModule2->Insert_Comanda->ParamByName("PRET")->AsFloat = StrToFloat(Edit24->Text);
-		DataModule2->Insert_Comanda->ParamByName("KM")->AsFloat = StrToFloat(Edit22->Text);
-		DataModule2->Insert_Comanda->ParamByName("COST_KM")->AsFloat = StrToFloat(Edit23->Text);
-		DataModule2->Insert_Comanda->ExecSQL();
-
-
+			//MessageDlg("Inregistrare cu succes!", mtInformation, TMsgDlgButtons() << mbYes, 0);
+			if (MessageDlg("Inregistrare cu succes!\nDoriti sa mai inregistrati?", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo, 0) == mrYes)
+			{
+				Edit3->Clear();
+				Edit4->Clear();
+				Edit5->Clear();
+				Edit6->Clear();
+				Edit7->Clear();
+				Edit8->Clear();
+				Edit9->Clear();
+				ComboBox1->Clear();
+			}
+			else
+			{
+				SpeedButton33->Click();
+			}
+			DataModule2->FDQuery9->Close();
+			DataModule2->FDQuery9->Open();
+		}
+		else
+		{
+			MessageDlg("Nu sunt indicate toate cimpurile", mtError, TMsgDlgButtons() << mbYes, 0);
+		}
+	//}
+	//catch(...)
+	//{
+	   //	MessageDlg("Ups!!! ceva nu a mers bine\nVa rugam sa apelati administratorul.", mtError, TMsgDlgButtons() << mbYes, 0);
+   //	}
 
 }
 //---------------------------------------------------------------------------
@@ -247,7 +282,7 @@ void __fastcall TForm1::SpeedButton20Click(TObject *Sender)
 		Edit14->Text    = DataModule2->FDQuery9->FieldByName("tip_taxi")->AsString;
 		Edit15->Text    = DataModule2->FDQuery9->FieldByName("motor")->AsString;
 		ComboBox2->Text = DataModule2->FDQuery9->FieldByName("combustibil")->AsString;
-		Edit16->Text    = DataModule2->FDQuery9->FieldByName("nr_auto")->AsString;
+		Edit16->Text    = DataModule2->FDQuery9->FieldByName("NR_AUTO")->AsString;
 
 		marca_id     		= DataModule2->FDQuery9->FieldByName("marca_id")->AsInteger;
 		model_id     		= DataModule2->FDQuery9->FieldByName("model_id")->AsInteger;
@@ -319,13 +354,13 @@ void __fastcall TForm1::SpeedButton39Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton33Click(TObject *Sender)
 {
-	Edit3->Text 	  = "";
-	Edit4->Text 	  = "";
-	Edit5->Text 	  = "";
-	Edit6->Text 	  = "";
-	Edit7->Text 	  = "";
+	Edit3->Text 	= "";
+	Edit4->Text     = "";
+	Edit5->Text 	= "";
+	Edit6->Text 	= "";
+	Edit7->Text 	= "";
 	Edit8->Text     = "";
-  Edit9->Text     = "";
+	Edit9->Text     = "";
 	ComboBox1->Text = "";
 
 	TabSheet14->TabVisible = false; //inserare
@@ -440,6 +475,9 @@ void __fastcall TForm1::SpeedButton24Click(TObject *Sender)
 {
 	automobil_id=DataModule2->FDQuery9->FieldByName("auto_id")->AsInteger;
 
+	Memo1->Clear();
+	Memo2->Clear();
+
 	Memo1->Lines->Add(DataModule2->FDQuery9->FieldByName("DENUMIRE_1")->AsString);
 	Memo1->Lines->Add(DataModule2->FDQuery9->FieldByName("DENUMIRE"  )->AsString);
 	Memo1->Lines->Add(DataModule2->FDQuery9->FieldByName("NR_AUTO"   )->AsString);
@@ -496,7 +534,7 @@ void __fastcall TForm1::Edit17Change(TObject *Sender)
 		if (RadioButton1->Checked) DataModule2->FDQuery2->SQL->Add(" where raion like '%" + Edit17->Text + "%' ");
 		if (RadioButton2->Checked) DataModule2->FDQuery2->SQL->Add(" where L.DENUMIRE like '%" + Edit17->Text + "%' ");
 		if (RadioButton3->Checked) DataModule2->FDQuery2->SQL->Add(" where S.DENUMIRE like '%" + Edit17->Text + "%' ");
-				DataModule2->FDQuery2->Open();
+		DataModule2->FDQuery2->Open();
 	}
 	else
 	{
@@ -550,7 +588,7 @@ void __fastcall TForm1::RadioButton1Click(TObject *Sender)
 	{
 		Edit17->Clear();
 		Edit17->SetFocus();
-		Edit17->TextHint="Raion";
+
 	}
 }
 //---------------------------------------------------------------------------
@@ -559,9 +597,9 @@ void __fastcall TForm1::RadioButton2Click(TObject *Sender)
 {
     if(RadioButton2->Checked)
 	{
-		//Edit17->Clear();
+		Edit17->Clear();
 		Edit17->SetFocus();
-		Edit17->TextHint="Localitate";
+
 	}
 }
 //---------------------------------------------------------------------------
@@ -570,9 +608,9 @@ void __fastcall TForm1::RadioButton3Click(TObject *Sender)
 {
 	if(RadioButton3->Checked)
 	{
-		//Edit17->Clear();
+		Edit17->Clear();
 		Edit17->SetFocus();
-		Edit17->TextHint="Strada";
+
 	}
 }
 //---------------------------------------------------------------------------
@@ -580,12 +618,323 @@ void __fastcall TForm1::RadioButton3Click(TObject *Sender)
 
 void __fastcall TForm1::SpeedButton42Click(TObject *Sender)
 {
-  TabSheet10->TabVisible = true;
+	TabSheet10->TabVisible = true;
 	TabSheet2->TabVisible = false;
 	DataModule2->FDQuery1->Close();
 	RadioButton3->Checked=true;
 	Edit17->Clear();
-  Edit17->TextHint="Strada";
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::SpeedButton46Click(TObject *Sender)
+{
+	Edit18->Clear();
+	Edit19->Clear();
+	Edit20->Clear();
+	Edit21->Clear();
+	Edit22->Clear();
+	Edit23->Clear();
+	Edit24->Clear();
+	Edit25->Clear();
+	Memo1 ->Clear();
+
+	TabSheet16->TabVisible =  true;//main(comanda)
+	TabSheet17->TabVisible = false;//inserarea(comanda)
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton21Click(TObject *Sender)
+{
+	TabSheet17->TabVisible = true;//inserare(comanda)
+	TabSheet16->TabVisible = false;//main(comanda)
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Edit23Change(TObject *Sender)
+{
+	try
+	{
+		if( ( Edit23->Text !="" ) && ( Edit22->Text !="" ) && ( Edit23->Text.ToDouble() > 0 ) && ( Edit22->Text.ToDouble() > 0 ) )
+		{
+			Edit24->Text = FloatToStr(Edit22->Text.ToDouble() * Edit23->Text.ToDouble() ) ;
+		}
+  }
+  catch(...)
+	{
+		Edit24->Text = "0";
+		MessageDlg("Nu pot calcula costul deplasarii !! ", mtError, TMsgDlgButtons() << mbOK,0);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton22Click(TObject *Sender)
+{
+	Edit27->Text = DataModule2->FDQuery11->FieldByName("SOFER")->AsString;
+	Edit28->Text = DataModule2->FDQuery11->FieldByName("RAION")->AsString;
+	Edit29->Text = DataModule2->FDQuery11->FieldByName("DENUMIRE_3")->AsString;
+	Edit30->Text = DataModule2->FDQuery11->FieldByName("DENUMIRE_2")->AsString;
+	Edit31->Text = DataModule2->FDQuery11->FieldByName("KM")->AsString;
+	Edit32->Text = DataModule2->FDQuery11->FieldByName("COST_KM")->AsString;
+	Edit33->Text = DataModule2->FDQuery11->FieldByName("PRET")->AsString;
+	Edit34->Text = DataModule2->FDQuery11->FieldByName("NOTA")->AsString;
+
+	Memo2->Lines->Add( DataModule2->FDQuery11->FieldByName("DENUMIRE_1")->AsString );
+	Memo2->Lines->Add( DataModule2->FDQuery11->FieldByName("DENUMIRE")->AsString );
+	Memo2->Lines->Add( DataModule2->FDQuery11->FieldByName("NR_AUTO")->AsString );
+
+	strada_id    = DataModule2->FDQuery11->FieldByName("LOCALITATE_ID")->AsInteger;
+	operator_id  = DataModule2->FDQuery11->FieldByName("OPERATOR_ID")->AsInteger;
+	automobil_id = DataModule2->FDQuery11->FieldByName("AUTO_ID")->AsInteger;
+
+
+
+	Edit18->Clear();
+	Edit19->Clear();
+	Edit20->Clear();
+	Edit21->Clear();
+	Edit22->Clear();
+	Edit23->Clear();
+	Edit24->Clear();
+	Edit25->Clear();
+	Memo1 ->Clear();
+
+	TabSheet18->TabVisible = true;//editare(comanda)
+	TabSheet16->TabVisible = false;//main(comanda)
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton53Click(TObject *Sender)
+{
+	try
+	{
+		if( ( !Memo2->Text.IsEmpty() ) && ( !Edit27->Text.IsEmpty() ) && ( !Edit28->Text.IsEmpty() ) && ( !Edit29->Text.IsEmpty() ) && ( !Edit30->Text.IsEmpty() ) && ( !Edit31->Text.IsEmpty() ) && ( !Edit33->Text.IsEmpty() ) )
+		{
+			DataModule2->Update_Comanda->Close();
+			DataModule2->Update_Comanda->ParamByName("AUTO_ID")->AsInteger = automobil_id;
+			DataModule2->Update_Comanda->ParamByName("LOCALITATE_ID")->AsInteger = strada_id;
+			DataModule2->Update_Comanda->ParamByName("OPERATOR_ID")->AsInteger = operator_id;
+			DataModule2->Update_Comanda->ParamByName("NOTA")->AsString = Edit34->Text;
+			DataModule2->Update_Comanda->ParamByName("ADRESA_DESTINATIE")->AsString = Edit28->Text+", "+Edit29->Text+", "+Edit30->Text;
+			DataModule2->Update_Comanda->ParamByName("PRET")->AsFloat = StrToFloat(Edit33->Text);
+			DataModule2->Update_Comanda->ParamByName("KM")->AsFloat = StrToFloat(Edit31->Text);
+			DataModule2->Update_Comanda->ParamByName("COST_KM")->AsFloat = StrToFloat(Edit32->Text);
+			DataModule2->Update_Comanda->ParamByName("COMANDA_ID")->AsInteger = DataModule2->FDQuery11->FieldByName("COMANDA_ID")->AsInteger;
+			DataModule2->Update_Comanda->ExecSQL();
+
+			MessageDlg("Editare cu succes!", mtInformation, TMsgDlgButtons() << mbYes, 0);
+
+			Edit27->Clear();
+			Edit28->Clear();
+			Edit29->Clear();
+			Edit30->Clear();
+			Edit31->Clear();
+			Edit32->Clear();
+			Edit33->Clear();
+			Edit34->Clear();
+			Memo2 ->Clear();
+
+			DataModule2->FDQuery11->Close();
+			DataModule2->FDQuery11->Open();
+		}
+		else
+		{
+			MessageDlg("Nu sunt indicate toate cimpurile", mtError, TMsgDlgButtons() << mbYes, 0);
+		}
+	}
+	catch(...)
+	{
+		MessageDlg("Ups!!! ceva nu amers bine\nVa rugam sa apelati administratorul.", mtError, TMsgDlgButtons() << mbYes, 0);
+	}
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton54Click(TObject *Sender)
+{
+	Edit27->Clear();
+	Edit28->Clear();
+	Edit29->Clear();
+	Edit30->Clear();
+	Edit31->Clear();
+	Edit32->Clear();
+	Edit33->Clear();
+	Edit34->Clear();
+	Memo2 ->Clear();
+
+	TabSheet18->TabVisible = false;//editare(comanda)
+	TabSheet16->TabVisible = true;//main(comanda)
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton30Click(TObject *Sender)
+{
+  try
+	{
+		if( !DataModule2->FDQuery11->IsEmpty() )
+		{
+			if (MessageDlg("Dvs doriti sa eliminati informatia?", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo, 0) == mrYes)
+			{
+				DataModule2->Delete_Comanda->Close();
+				DataModule2->Delete_Comanda->ParamByName("COMANDA_ID")->AsInteger = DataModule2->FDQuery11->FieldByName("COMANDA_ID")->AsInteger;
+				DataModule2->Delete_Comanda->ExecSQL();
+
+				DataModule2->FDQuery11->Close();
+				DataModule2->FDQuery11->Open();
+        MessageDlg("Eliminare cu succes", mtConfirmation, TMsgDlgButtons() << mbYes, 0);
+      }
+		}
+		else
+		{
+			ShowMessage("Nu sunt date de eliminat");
+    }
+	}
+	catch(...)
+	{
+		ShowMessage("Ups... eroare de program! Va rugam apelati administratorul");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton47Click(TObject *Sender)
+{
+	AnsiString s;
+
+	s = " SELECT *, SOFER.NUME+' '+SOFER.PRENUME AS SOFER FROM AUTOMOBIL A INNER JOIN CAROSERIE C ON A.CAROSERIE_ID=C.CAROSERIE_ID ";
+	s+=	" INNER JOIN MODEL M ON M.MODEL_ID=A.MODEL_ID ";
+	s+=	" INNER JOIN MARCA MM ON MM.MARCA_ID=M.MARCA_ID ";
+	s+=	" INNER JOIN TIP T ON T.TIP_ID=A.TIP_ID ";
+	s+=	" INNER JOIN CULOARE CC ON CC.CULOARE_ID=A.CULOARE_ID ";
+	s+=	" INNER JOIN COMANDA CO ON CO.AUTO_ID=A.AUTO_ID ";
+	s+=	" INNER JOIN OPERATOR SOFER ON SOFER.OPERATOR_ID=CO.OPERATOR_ID ";
+	s+=	" INNER JOIN STRADA ST ON ST.STRADA_ID=CO.LOCALITATE_ID ";
+	s+=	" INNER JOIN LOCALITATE L ON L.LOCALITATE_ID=ST.LOCALITATE_ID";
+	s+=	" INNER JOIN RAION R ON R.RAION_ID=L.RAION_ID WHERE COMANDA_ID > 0 ";
+
+	if(CheckBox1->Checked)
+	{ s+= " and NR_AUTO = '" + Edit26->Text + "'"; }
+
+	if(CheckBox2->Checked)
+	{ s+= " and ADRESA_DESTINATIE like '%" + Edit35->Text + "%'"; }
+
+	if(CheckBox3->Checked)
+	{ s+= " and SOFER.NUME like '%" + Edit36->Text + "%'"; }
+
+	DataModule2->FDQuery12->Close();
+	DataModule2->FDQuery12->SQL->Clear();
+	DataModule2->FDQuery12->SQL->Add(s);
+	DataModule2->FDQuery12->Open();
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CheckBox1Click(TObject *Sender)
+{
+	if(CheckBox1->Checked)
+	{
+		Edit26->Clear();
+		Edit26->Enabled=true;
+	}
+	else
+	{
+		Edit26->Clear();
+		Edit26->Enabled=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CheckBox2Click(TObject *Sender)
+{
+	if(CheckBox2->Checked)
+	{
+		Edit35->Clear();
+		Edit35->Enabled=true;
+	}
+	else
+	{
+		Edit35->Clear();
+		Edit35->Enabled=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CheckBox3Click(TObject *Sender)
+{
+  if(CheckBox3->Checked)
+	{
+		Edit36->Clear();
+		Edit36->Enabled=true;
+	}
+	else
+	{
+        Edit36->Clear();
+		Edit36->Enabled=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton40Click(TObject *Sender)
+{
+	TabSheet12->TabVisible = true;//cautare
+	TabSheet2->TabVisible = false;//main(comanda)
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton48Click(TObject *Sender)
+{
+	DataModule2->FDQuery12->Close();
+	TabSheet12->TabVisible = false;//cautare
+	TabSheet2->TabVisible = true;//main(comanda)
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton45Click(TObject *Sender)
+{
+    //try
+	//{
+		if( ( !Memo1->Text.IsEmpty() ) && ( !Edit18->Text.IsEmpty() ) && ( !Edit19->Text.IsEmpty() ) && ( !Edit20->Text.IsEmpty() ) && ( !Edit21->Text.IsEmpty() ) && ( !Edit22->Text.IsEmpty() ) )
+		{
+			DataModule2->Insert_Comanda->Close();
+			DataModule2->Insert_Comanda->ParamByName("AUTO_ID")->AsInteger = automobil_id;
+			DataModule2->Insert_Comanda->ParamByName("LOCALITATE_ID")->AsInteger = strada_id;
+			DataModule2->Insert_Comanda->ParamByName("OPERATOR_ID")->AsInteger = operator_id;
+			DataModule2->Insert_Comanda->ParamByName("NOTA")->AsString = Edit25->Text;
+			DataModule2->Insert_Comanda->ParamByName("ADRESA_DESTINATIE")->AsString = Edit19->Text+", "+Edit20->Text+", "+Edit21->Text;
+			DataModule2->Insert_Comanda->ParamByName("PRET")->AsFloat = StrToFloat(Edit24->Text);
+			DataModule2->Insert_Comanda->ParamByName("KM")->AsFloat = StrToFloat(Edit22->Text);
+			DataModule2->Insert_Comanda->ParamByName("COST_KM")->AsFloat = StrToFloat(Edit23->Text);
+			DataModule2->Insert_Comanda->ExecSQL();
+
+			//MessageDlg("Inregistrare cu succes!", mtInformation, TMsgDlgButtons() << mbYes, 0);
+			if (MessageDlg("Inregistrare cu succes!\nDoriti sa mai inregistrati?", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo, 0) == mrYes)
+			{
+				Edit18->Clear();
+				Edit19->Clear();
+				Edit20->Clear();
+				Edit21->Clear();
+				Edit22->Clear();
+				Edit23->Clear();
+				Edit24->Clear();
+				Edit25->Clear();
+				Memo1 ->Clear();
+			}
+			else
+			{
+				SpeedButton46->Click();
+			}
+			DataModule2->FDQuery11->Close();
+			DataModule2->FDQuery11->Open();
+		}
+		else
+		{
+			MessageDlg("Nu sunt indicate toate cimpurile", mtError, TMsgDlgButtons() << mbYes, 0);
+		}
+	//}
+	//catch(...)
+	//{
+	   //	MessageDlg("Ups!!! ceva nu a mers bine\nVa rugam sa apelati administratorul.", mtError, TMsgDlgButtons() << mbYes, 0);
+   //	}
 
 }
 //---------------------------------------------------------------------------

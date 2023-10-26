@@ -1,0 +1,472 @@
+object DataModule2: TDataModule2
+  Height = 661
+  Width = 1136
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'DataSource=BDTAXI'
+      'DriverID=ODBC')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 8
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from OPERATOR')
+    Left = 112
+    Top = 8
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 184
+    Top = 8
+  end
+  object FDQuery2: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        'SELECT * FROM RAION R INNER JOIN LOCALITATE L ON R.RAION_ID=L.RA' +
+        'ION_ID'
+      'INNER JOIN STRADA S ON S.LOCALITATE_ID=L.LOCALITATE_ID')
+    Left = 112
+    Top = 64
+  end
+  object DataSource2: TDataSource
+    DataSet = FDQuery2
+    Left = 184
+    Top = 64
+  end
+  object FDQuery3: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from LOCALITATE')
+    Left = 112
+    Top = 120
+  end
+  object DataSource3: TDataSource
+    DataSet = FDQuery3
+    Left = 184
+    Top = 120
+  end
+  object DataSource4: TDataSource
+    DataSet = FDQuery4
+    Left = 184
+    Top = 176
+  end
+  object FDQuery4: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from TIP')
+    Left = 112
+    Top = 176
+  end
+  object FDQuery5: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from CAROSERIE')
+    Left = 112
+    Top = 232
+  end
+  object DataSource5: TDataSource
+    DataSet = FDQuery5
+    Left = 184
+    Top = 232
+  end
+  object DataSource6: TDataSource
+    DataSet = FDQuery6
+    Left = 184
+    Top = 288
+  end
+  object FDQuery6: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from CULOARE')
+    Left = 112
+    Top = 288
+  end
+  object FDQuery7: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from MARCA')
+    Left = 112
+    Top = 344
+  end
+  object DataSource7: TDataSource
+    DataSet = FDQuery7
+    Left = 184
+    Top = 344
+  end
+  object DataSource8: TDataSource
+    DataSet = FDQuery8
+    Left = 184
+    Top = 400
+  end
+  object FDQuery8: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from MODEL where MARCA_ID=:MARCA_ID')
+    Left = 112
+    Top = 400
+    ParamData = <
+      item
+        Name = 'MARCA_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object FDQuery9: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        'SELECT * FROM AUTOMOBIL A INNER JOIN CAROSERIE C ON A.CAROSERIE_' +
+        'ID=C.CAROSERIE_ID'
+      #9#9#9#9#9#9'  INNER JOIN MODEL M ON M.MODEL_ID=A.MODEL_ID'
+      #9#9#9#9#9#9'  INNER JOIN MARCA MM ON MM.MARCA_ID=M.MARCA_ID'
+      #9#9#9#9#9#9'  INNER JOIN TIP T ON T.TIP_ID=A.TIP_ID'
+      #9#9#9#9#9#9'  INNER JOIN CULOARE CC ON CC.CULOARE_ID=A.CULOARE_ID')
+    Left = 112
+    Top = 456
+  end
+  object DataSource9: TDataSource
+    DataSet = FDQuery9
+    Left = 184
+    Top = 456
+  end
+  object DataSource10: TDataSource
+    DataSet = FDQuery10
+    Left = 184
+    Top = 512
+  end
+  object FDQuery10: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from COMANDA')
+    Left = 112
+    Top = 512
+  end
+  object Inserare_Auto: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        'INSERT INTO AUTOMOBIL(MODEL_ID,CULOARE_ID,CAROSERIE_ID,TIP_ID,NR' +
+        '_AUTO,MOTOR,COMBUSTIBIL)'
+      
+        'VALUES(:MODEL_ID,:CULOARE_ID,:CAROSERIE_ID,:TIP_ID,:NR_AUTO,:MOT' +
+        'OR,:COMBUSTIBIL)')
+    Left = 296
+    Top = 8
+    ParamData = <
+      item
+        Name = 'MODEL_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'CULOARE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'CAROSERIE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'TIP_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NR_AUTO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'MOTOR'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'COMBUSTIBIL'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object Update_Auto: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'UPDATE AUTOMOBIL SET'
+      'MODEL_ID=:MODEL_ID,'
+      'CULOARE_ID=:CULOARE_ID,'
+      'CAROSERIE_ID=:CAROSERIE_ID,'
+      'TIP_ID=:TIP_ID,'
+      'NR_AUTO=:NR_AUTO,'
+      'MOTOR=:MOTOR,'
+      'COMBUSTIBIL=:COMBUSTIBIL'
+      'WHERE AUTO_ID=:AUTO_ID')
+    Left = 384
+    Top = 8
+    ParamData = <
+      item
+        Name = 'MODEL_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'CULOARE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'CAROSERIE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'TIP_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NR_AUTO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'MOTOR'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'COMBUSTIBIL'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'AUTO_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object Delete_Auto: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'DELETE AUTOMOBIL'
+      'WHERE AUTO_ID=:AUTO_ID')
+    Left = 464
+    Top = 8
+    ParamData = <
+      item
+        Name = 'AUTO_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object Insert_Comanda: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        ' INSERT INTO COMANDA(AUTO_ID, LOCALITATE_ID, OPERATOR_ID, NOTA, ' +
+        'ADRESA_DESTINATIE, PRET, KM, COST_KM)'
+      
+        '              VALUES(:AUTO_ID, :LOCALITATE_ID, :OPERATOR_ID, :NO' +
+        'TA, :ADRESA_DESTINATIE, :PRET, :KM, :COST_KM)')
+    Left = 296
+    Top = 78
+    ParamData = <
+      item
+        Name = 'AUTO_ID'
+        ParamType = ptInput
+      end
+      item
+        Name = 'LOCALITATE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'OPERATOR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NOTA'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'ADRESA_DESTINATIE'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'PRET'
+        DataType = ftFloat
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'KM'
+        DataType = ftFloat
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'COST_KM'
+        DataType = ftFloat
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object FDQuery11: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT *, SOFER.NUME+'#39' '#39'+SOFER.PRENUME AS SOFER FROM '
+      
+        'AUTOMOBIL A INNER JOIN CAROSERIE C ON A.CAROSERIE_ID=C.CAROSERIE' +
+        '_ID'
+      #9#9#9'INNER JOIN MODEL M ON M.MODEL_ID=A.MODEL_ID'
+      #9#9#9'INNER JOIN MARCA MM ON MM.MARCA_ID=M.MARCA_ID'
+      #9#9#9'INNER JOIN TIP T ON T.TIP_ID=A.TIP_ID'
+      #9#9#9'INNER JOIN CULOARE CC ON CC.CULOARE_ID=A.CULOARE_ID'
+      #9#9#9'INNER JOIN COMANDA CO ON CO.AUTO_ID=A.AUTO_ID'
+      #9#9#9'INNER JOIN OPERATOR SOFER ON SOFER.OPERATOR_ID=CO.OPERATOR_ID'
+      #9#9#9'INNER JOIN STRADA ST ON ST.STRADA_ID=CO.LOCALITATE_ID'
+      #9#9#9'INNER JOIN LOCALITATE L ON L.LOCALITATE_ID=ST.LOCALITATE_ID'
+      #9#9#9'INNER JOIN RAION R ON R.RAION_ID=L.RAION_ID')
+    Left = 112
+    Top = 576
+  end
+  object DataSource11: TDataSource
+    DataSet = FDQuery11
+    Left = 184
+    Top = 576
+  end
+  object Update_Comanda: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'UPDATE COMANDA SET'
+      'AUTO_ID=:AUTO_ID,'
+      'LOCALITATE_ID=:LOCALITATE_ID,'
+      'OPERATOR_ID=:OPERATOR_ID,'
+      'NOTA=:NOTA,'
+      'ADRESA_DESTINATIE=:ADRESA_DESTINATIE,'
+      'PRET=:PRET,'
+      'KM=:KM,'
+      'COST_KM=:COST_KM'
+      'WHERE COMANDA_ID=:COMANDA_ID')
+    Left = 400
+    Top = 78
+    ParamData = <
+      item
+        Name = 'AUTO_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'LOCALITATE_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'OPERATOR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NOTA'
+        ParamType = ptInput
+      end
+      item
+        Name = 'ADRESA_DESTINATIE'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'PRET'
+        DataType = ftFloat
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'KM'
+        DataType = ftFloat
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'COST_KM'
+        DataType = ftFloat
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'COMANDA_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object Delete_Comanda: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'DELETE COMANDA'
+      'WHERE COMANDA_ID=:COMANDA_ID')
+    Left = 504
+    Top = 78
+    ParamData = <
+      item
+        Name = 'COMANDA_ID'
+        ParamType = ptInput
+      end>
+  end
+  object FDQuery12: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT *, SOFER.NUME+'#39' '#39'+SOFER.PRENUME AS SOFER FROM '
+      
+        'AUTOMOBIL A INNER JOIN CAROSERIE C ON A.CAROSERIE_ID=C.CAROSERIE' +
+        '_ID'
+      #9#9#9'INNER JOIN MODEL M ON M.MODEL_ID=A.MODEL_ID'
+      #9#9#9'INNER JOIN MARCA MM ON MM.MARCA_ID=M.MARCA_ID'
+      #9#9#9'INNER JOIN TIP T ON T.TIP_ID=A.TIP_ID'
+      #9#9#9'INNER JOIN CULOARE CC ON CC.CULOARE_ID=A.CULOARE_ID'
+      #9#9#9'INNER JOIN COMANDA CO ON CO.AUTO_ID=A.AUTO_ID'
+      #9#9#9'INNER JOIN OPERATOR SOFER ON SOFER.OPERATOR_ID=CO.OPERATOR_ID'
+      #9#9#9'INNER JOIN STRADA ST ON ST.STRADA_ID=CO.LOCALITATE_ID'
+      #9#9#9'INNER JOIN LOCALITATE L ON L.LOCALITATE_ID=ST.LOCALITATE_ID'
+      #9#9#9'INNER JOIN RAION R ON R.RAION_ID=L.RAION_ID')
+    Left = 288
+    Top = 576
+  end
+  object DataSource12: TDataSource
+    DataSet = FDQuery12
+    Left = 360
+    Top = 576
+  end
+end

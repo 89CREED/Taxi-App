@@ -48,10 +48,16 @@ __published:	// IDE-managed Components
 	TDataSource *DataSource9;
 	TDataSource *DataSource10;
 	TFDQuery *FDQuery10;
-	TFDQuery *Inserare_Auto;
+	TFDQuery *Insert_Auto;
 	TFDQuery *Update_Auto;
 	TFDQuery *Delete_Auto;
 	TFDQuery *Insert_Comanda;
+	TFDQuery *FDQuery11;
+	TDataSource *DataSource11;
+	TFDQuery *Update_Comanda;
+	TFDQuery *Delete_Comanda;
+	TFDQuery *FDQuery12;
+	TDataSource *DataSource12;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule2(TComponent* Owner);

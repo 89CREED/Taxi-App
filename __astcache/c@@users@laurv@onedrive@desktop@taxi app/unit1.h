@@ -168,6 +168,17 @@ __published:	// IDE-managed Components
 	TRadioButton *RadioButton2;
 	TRadioButton *RadioButton3;
 	TEdit *Edit17;
+	TPanel *Panel26;
+	TPanel *Panel27;
+	TDBGrid *DBGrid11;
+	TCheckBox *CheckBox1;
+	TEdit *Edit26;
+	TCheckBox *CheckBox2;
+	TEdit *Edit35;
+	TCheckBox *CheckBox3;
+	TEdit *Edit36;
+	TSpeedButton *SpeedButton47;
+	TSpeedButton *SpeedButton48;
 	void __fastcall SpeedButton1Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall Panel6Resize(TObject *Sender);
@@ -208,6 +219,21 @@ __published:	// IDE-managed Components
 	void __fastcall RadioButton2Click(TObject *Sender);
 	void __fastcall RadioButton3Click(TObject *Sender);
 	void __fastcall SpeedButton42Click(TObject *Sender);
+	void __fastcall SpeedButton46Click(TObject *Sender);
+	void __fastcall SpeedButton21Click(TObject *Sender);
+	void __fastcall Edit23Change(TObject *Sender);
+	void __fastcall SpeedButton22Click(TObject *Sender);
+	void __fastcall SpeedButton53Click(TObject *Sender);
+	void __fastcall SpeedButton54Click(TObject *Sender);
+	void __fastcall SpeedButton30Click(TObject *Sender);
+	void __fastcall SpeedButton47Click(TObject *Sender);
+	void __fastcall CheckBox1Click(TObject *Sender);
+	void __fastcall CheckBox2Click(TObject *Sender);
+	void __fastcall CheckBox3Click(TObject *Sender);
+	void __fastcall SpeedButton40Click(TObject *Sender);
+	void __fastcall SpeedButton48Click(TObject *Sender);
+	void __fastcall SpeedButton45Click(TObject *Sender);
+
 
 private:	// User declarations
 public:		// User declarations
